@@ -1,0 +1,62 @@
+﻿[2m03:13:16[22m [34m[content][39m Syncing content
+[2m03:13:16[22m [34m[content][39m Content config changed
+[2m03:13:16[22m [34m[content][39m Clearing content store
+node.exe : bad 
+indentation of a 
+mapping entry
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (bad indentati   
+ on of a mapping en    
+try:String) [], Re    
+moteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+  [1mLocation:[22m
+    [4mC:\Users\harshr
+aj\Downloads\nzcan\src\
+content\nz\telecom\2deg
+rees-fritzbox-secret-me
+nu.md:16:38[24m
+  [1mStack trace:[22m
+[2m    at 
+generateError (file:///
+C:/Users/harshraj/Downl
+oads/nzcan/node_modules
+/js-yaml/dist/js-yaml.m
+js:1289:10)
+    at 
+readBlockMapping (file:
+///C:/Users/harshraj/Do
+wnloads/nzcan/node_modu
+les/js-yaml/dist/js-yam
+l.mjs:2278:7)
+    at 
+readBlockSequence (file
+:///C:/Users/harshraj/D
+ownloads/nzcan/node_mod
+ules/js-yaml/dist/js-ya
+ml.mjs:2104:5)
+    at 
+readBlockMapping (file:
+///C:/Users/harshraj/Do
+wnloads/nzcan/node_modu
+les/js-yaml/dist/js-yam
+l.mjs:2260:11)
+    at readDocument (fi
+le:///C:/Users/harshraj
+/Downloads/nzcan/node_m
+odules/js-yaml/dist/js-
+yaml.mjs:2721:3)[22m

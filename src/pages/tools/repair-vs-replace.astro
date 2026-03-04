@@ -6,9 +6,9 @@ import RepairReplaceCalc from '../../components/tools/RepairReplaceCalc';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
 const breadcrumbs = [
-  { text: 'Rescue Hub', href: '/' },
-  { text: 'Tools', href: '/tools/' },
-  { text: 'Repair vs Replace Calculator', href: '/tools/repair-vs-replace/' }
+  { name: 'Rescue Hub', href: '/' },
+  { name: 'Tools', href: '/tools/' },
+  { name: 'Repair vs Replace Calculator', href: '/tools/repair-vs-replace/' }
 ];
 
 const structuredData = JSON.stringify({
@@ -22,7 +22,7 @@ const structuredData = JSON.stringify({
 ---
 
 <BaseLayout 
-  title='Repair or Replace? The Technician's Decision Tool (2026) | ErrorDocs'
+  title={`Repair or Replace? The Technicians Decision Tool (2026) | ErrorDocs`}
   description='Stop guessing. Use our professional Repair vs Replace scorecard to decide if your washing machine, fridge, or oven is worth fixing. Expert advice for New Zealand and Canada.'
   schema={structuredData}
 >

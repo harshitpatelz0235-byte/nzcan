@@ -2,13 +2,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import IspRipoffDetector from '../../components/tools/IspRipoffDetector';
+import IspRipoffDetectorTool from '../../components/tools/IspRipoffDetector';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
 const breadcrumbs = [
-  { text: 'Canada Rescue', href: '/ca/' },
-  { text: 'Tools', href: '/tools/' },
-  { text: 'ISP Rip-off Detector', href: '/tools/isp-ripoff-detector/' }
+  { name: 'Canada Rescue', href: '/ca/' },
+  { name: 'Tools', href: '/tools/' },
+  { name: 'ISP Rip-off Detector', href: '/tools/isp-ripoff-detector/' }
 ];
 
 const structuredData = JSON.stringify({
@@ -23,7 +23,7 @@ const structuredData = JSON.stringify({
 
 <BaseLayout 
   title='ISP Rip-off Detector: Are You Overpaying Bell or Rogers? (2026) | ErrorDocs'
-  description='Don't let Canadian ISPs throttle your speed. Use the ErrorDocs Rip-off Detector to verify your connection and get the exact script to demand a bill credit.'
+  description={`Do not let Canadian ISPs throttle your speed. Use the ErrorDocs Rip-off Detector to verify your connection and get the exact script to demand a bill credit.`}
   schema={structuredData}
 >
   <Header country='ca' />
@@ -51,7 +51,7 @@ const structuredData = JSON.stringify({
     </header>
 
     <section class='mb-32'>
-      <IspRipoffDetector client:visible />
+      <IspRipoffDetectorTool client:visible />
     </section>
 
     <article class='prose prose-xl prose-invert max-w-none prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tighter prose-headings:italic prose-p:text-foreground/80'>
@@ -99,7 +99,7 @@ const structuredData = JSON.stringify({
       <section class='my-20 p-12 bg-red-600 border-4 border-foreground rounded-[3rem] text-white'>
         <h2 class='text-white mt-0 uppercase italic text-4xl'>Local Hardware Recommendation</h2>
         <p class='text-xl font-bold'>
-          'Don't rely on the cheap CAT5 cable Rogers gave you. Go to **Canada Computers** or **Best Buy Canada** and buy a **Shielded CAT6a Cable**. This ensures zero EMI interference, especially in multi-unit condos where 50+ Wi-Fi signals are fighting for airtime.'
+          Do not rely on the cheap CAT5 cable Rogers gave you. Go to **Canada Computers** or **Best Buy Canada** and buy a **Shielded CAT6a Cable**. This ensures zero EMI interference, especially in multi-unit condos where 50+ Wi-Fi signals are fighting for airtime.
         </p>
       </section>
 

@@ -10,6 +10,10 @@ const techFixesSchema = z.object({
   country: z.enum(['nz', 'ca']),
   instantAnswer: z.string().optional(),
   tags: z.array(z.string()).optional(),
+  faqs: z.array(z.object({
+    question: z.string(),
+    answer: z.string(),
+  })).optional(),
 });
 
 const nz = defineCollection({

@@ -46,8 +46,8 @@ const IspRipoffDetector = () => {
         <div className='space-y-6'>
           <div>
             <label className='block text-[10px] font-black uppercase tracking-widest text-foreground/40 mb-2'>Select Your ISP</label>
-            <select 
-              value={isp} 
+            <select
+              value={isp}
               onChange={(e) => setIsp(e.target.value)}
               className='w-full bg-foreground/5 border-2 border-foreground/10 rounded-xl p-3 font-bold tech-mono focus:border-primary outline-none transition-all appearance-none text-xs'
             >
@@ -63,8 +63,8 @@ const IspRipoffDetector = () => {
 
           <div>
             <label className='block text-[10px] font-black uppercase tracking-widest text-foreground/40 mb-2'>Advertised Plan Speed (Mbps)</label>
-            <input 
-              type='number' value={planSpeed} 
+            <input
+              type='number' value={planSpeed}
               onChange={(e) => setPlanSpeed(parseInt(e.target.value))}
               className='w-full bg-foreground/5 border-2 border-foreground/10 rounded-xl p-3 font-bold tech-mono focus:border-primary outline-none transition-all'
             />
@@ -74,8 +74,8 @@ const IspRipoffDetector = () => {
         <div className='space-y-6'>
           <div>
             <label className='block text-[10px] font-black uppercase tracking-widest text-foreground/40 mb-2'>Actual Speed Found (Mbps)</label>
-            <input 
-              type='number' value={actualSpeed} 
+            <input
+              type='number' value={actualSpeed}
               onChange={(e) => setActualSpeed(parseInt(e.target.value))}
               className='w-full bg-foreground/5 border-2 border-foreground/10 rounded-xl p-3 font-bold tech-mono focus:border-primary outline-none transition-all'
             />
@@ -84,8 +84,8 @@ const IspRipoffDetector = () => {
 
           <div>
             <label className='block text-[10px] font-black uppercase tracking-widest text-foreground/40 mb-2'>Monthly Bill Price ($)</label>
-            <input 
-              type='number' value={monthlyPrice} 
+            <input
+              type='number' value={monthlyPrice}
               onChange={(e) => setMonthlyPrice(parseInt(e.target.value))}
               className='w-full bg-foreground/5 border-2 border-foreground/10 rounded-xl p-3 font-bold tech-mono focus:border-primary outline-none transition-all'
             />
@@ -94,26 +94,26 @@ const IspRipoffDetector = () => {
       </div>
 
       <div className='bg-foreground text-background rounded-2xl p-8 relative overflow-hidden'>
-         <div className='flex flex-col md:flex-row items-center gap-8 relative z-10'>
-            <div className={`w-32 h-32 rounded-full border-8 flex flex-col items-center justify-center ${result.score < 50 ? 'border-rose-500' : 'border-primary'}`}>
-                <span className='text-4xl font-black tech-mono'>{result.score}%</span>
-                <span className='text-[8px] font-black uppercase tracking-widest leading-none'>Efficiency</span>
-            </div>
-            
-            <div className='flex-1 text-center md:text-left'>
-               <span className={`block text-xs font-black uppercase tracking-widest mb-2 ${result.score < 50 ? 'text-rose-500' : 'text-primary'}`}>Status: {result.status}</span>
-               <h3 className='text-2xl font-black uppercase italic tracking-tighter mb-2 leading-none'>{result.message}</h3>
-               {parseFloat(result.credit) > 0 andand (
-                 <div className='mt-4 p-4 bg-background/10 rounded-xl border border-background/20 inline-block'>
-                    <p className='text-sm font-bold'>Suggested Bill Credit: <span className='text-primary tech-mono'>${result.credit}</span></p>
-                    <a href='#negotiation-script' className='text-[10px] font-black uppercase underline tracking-widest mt-1 block hover:text-primary'>Get Negotiation Script</a>
-                 </div>
-               )}
-            </div>
-         </div>
-        
+        <div className='flex flex-col md:flex-row items-center gap-8 relative z-10'>
+          <div className={`w-32 h-32 rounded-full border-8 flex flex-col items-center justify-center ${result.score < 50 ? 'border-rose-500' : 'border-primary'}`}>
+            <span className='text-4xl font-black tech-mono'>{result.score}%</span>
+            <span className='text-[8px] font-black uppercase tracking-widest leading-none'>Efficiency</span>
+          </div>
+
+          <div className='flex-1 text-center md:text-left'>
+            <span className={`block text-xs font-black uppercase tracking-widest mb-2 ${result.score < 50 ? 'text-rose-500' : 'text-primary'}`}>Status: {result.status}</span>
+            <h3 className='text-2xl font-black uppercase italic tracking-tighter mb-2 leading-none'>{result.message}</h3>
+            {parseFloat(result.credit) > 0 && (
+              <div className='mt-4 p-4 bg-background/10 rounded-xl border border-background/20 inline-block'>
+                <p className='text-sm font-bold'>Suggested Bill Credit: <span className='text-primary tech-mono'>${result.credit}</span></p>
+                <a href='#negotiation-script' className='text-[10px] font-black uppercase underline tracking-widest mt-1 block hover:text-primary'>Get Negotiation Script</a>
+              </div>
+            )}
+          </div>
+        </div>
+
         {/* Subtle decorative grid */}
-        <div className='absolute inset-0 opacity-10 pointer-events-none' style={{backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px'}}></div>
+        <div className='absolute inset-0 opacity-10 pointer-events-none' style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
       </div>
     </div>
   );

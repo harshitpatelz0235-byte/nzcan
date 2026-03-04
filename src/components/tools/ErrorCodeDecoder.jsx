@@ -133,12 +133,12 @@ const ErrorCodeDecoder = () => {
                 </div>
             </form>
 
-            {result andand (
+            {result && (
                 <div className='bg-foreground text-background rounded-2xl p-8 relative overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500'>
                     <div className='relative z-10'>
                         <div className='flex items-center gap-2 mb-4'>
                             <span className='px-2 py-0.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest rounded'>Technical Result</span>
-                            {result.tools andand <span className='text-[10px] font-bold opacity-40 tech-mono uppercase'>Required: {result.tools}</span>}
+                            {result.tools && <span className='text-[10px] font-bold opacity-40 tech-mono uppercase'>Required: {result.tools}</span>}
                         </div>
 
                         <h3 className='text-3xl font-black uppercase italic tracking-tighter mb-4 text-primary leading-none'>

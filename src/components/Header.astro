@@ -6,7 +6,7 @@ const { country = 'nz' } = Astro.props;
 
 // Dynamically fetch unique categories from the content collection
 const allEntries = await getCollection(country as any);
-const uniqueCategories = [...new Set(allEntries.map(entry => entry.data.category))].sort();
+const uniqueCategories = [...new Set(allEntries.map((entry: any) => entry.data.category))].sort();
 
 const navLinks = uniqueCategories.map(cat => ({
   name: cat.charAt(0).toUpperCase() + cat.slice(1),

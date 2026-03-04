@@ -1,0 +1,172 @@
+﻿[2m03:14:23[22m [34m[content][39m Syncing content
+[2m03:14:23[22m [34m[content][39m Synced content
+[2m03:14:23[22m [34m[types][39m Generated [2m524ms[22m
+[2m03:14:23[22m [34m[check][39m Getting diagnostics for Astro files in C:\Users\harshraj\Downloads\nzcan...
+[96msrc/components/Breadcrumbs.astro[0m:[93m29[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m29[0m <script type="application/ld+json" set:html={JSON.stringify({
+[7m  [0m [93m        ~~~~[0m
+
+[96msrc/components/Header.astro[0m:[93m9[0m:[93m62[0m - [91merror[0m[90m ts(18046): [0m'entry' is of type 'unknown'.
+
+[7m9[0m const uniqueCategories = [...new Set(allEntries.map(entry => entry.data.category))].sort();
+[7m [0m [91m                                                             ~~~~~[0m
+
+[96msrc/components/tools/ErrorCodeDecoder.jsx[0m:[93m1[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React, { useState } from 'react';
+[7m [0m [93m       ~~~~~[0m
+[96msrc/components/tools/ErrorCodeDecoder.jsx[0m:[93m167[0m:[93m14[0m - [91merror[0m[90m ts(1381): [0mUnexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+[7m167[0m             )}
+[7m   [0m [91m             ~[0m
+[96msrc/components/tools/ErrorCodeDecoder.jsx[0m:[93m141[0m:[93m152[0m - [91merror[0m[90m ts(1381): [0mUnexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+[7m141[0m                             {result.tools andand <span className='text-[10px] font-bold opacity-40 tech-mono uppercase'>Required: {result.tools}</span>}
+[7m   [0m [91m                                                                                                                                                       ~[0m
+[96msrc/components/tools/ErrorCodeDecoder.jsx[0m:[93m141[0m:[93m43[0m - [91merror[0m[90m ts(1005): [0m'}' expected.
+
+[7m141[0m                             {result.tools andand <span className='text-[10px] font-bold opacity-40 tech-mono uppercase'>Required: {result.tools}</span>}
+[7m   [0m [91m                                          ~~~~~~[0m
+[96msrc/components/tools/ErrorCodeDecoder.jsx[0m:[93m136[0m:[93m21[0m - [91merror[0m[90m ts(1005): [0m'}' expected.
+
+[7m136[0m             {result andand (
+[7m   [0m [91m                    ~~~~~~[0m
+
+[96msrc/components/tools/HeatPumpCalc.jsx[0m:[93m1[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React, { useState, useEffect } from 'react';
+[7m [0m [93m       ~~~~~[0m
+[96msrc/components/tools/HeatPumpCalc.jsx[0m:[93m147[0m:[93m18[0m - [91merror[0m[90m ts(1381): [0mUnexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+[7m147[0m                 )}
+[7m   [0m [91m                 ~[0m
+[96msrc/components/tools/HeatPumpCalc.jsx[0m:[93m136[0m:[93m50[0m - [91merror[0m[90m ts(1005): [0m'}' expected.
+
+[7m136[0m                 {parseFloat(results.penalty) > 0 andand (
+[7m   [0m [91m                                                 ~~~~~~[0m
+
+[96msrc/components/tools/IspRipoffDetector.jsx[0m:[93m1[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React, { useState, useEffect } from 'react';
+[7m [0m [93m       ~~~~~[0m
+[96msrc/components/tools/IspRipoffDetector.jsx[0m:[93m111[0m:[93m17[0m - [91merror[0m[90m ts(1381): [0mUnexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+[7m111[0m                )}
+[7m   [0m [91m                ~[0m
+[96msrc/components/tools/IspRipoffDetector.jsx[0m:[93m106[0m:[93m47[0m - [91merror[0m[90m ts(1005): [0m'}' expected.
+
+[7m106[0m                {parseFloat(result.credit) > 0 andand (
+[7m   [0m [91m                                              ~~~~~~[0m
+
+[96msrc/components/tools/RepairReplaceCalc.jsx[0m:[93m25[0m:[93m15[0m - [93mwarning[0m[90m ts(6133): [0m'remainingLife' is declared but its value is never read.
+
+[7m25[0m         const remainingLife = lifespan - applianceAge;
+[7m  [0m [93m              ~~~~~~~~~~~~~[0m
+[96msrc/components/tools/RepairReplaceCalc.jsx[0m:[93m1[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React, { useState, useEffect } from 'react';
+[7m [0m [93m       ~~~~~[0m
+[96msrc/components/tools/RepairReplaceCalc.jsx[0m:[93m43[0m:[93m11[0m - [91merror[0m[90m ts(1128): [0mDeclaration or statement expected.
+
+[7m43[0m         } else if (costRatio < 0.3) {
+[7m  [0m [91m          ~~~~[0m
+[96msrc/components/tools/RepairReplaceCalc.jsx[0m:[93m37[0m:[93m57[0m - [91merror[0m[90m ts(1005): [0m';' expected.
+
+[7m37[0m         } else if (costRatio > 0.5 andand ageRatio > 0.5) {
+[7m  [0m [91m                                                        ~[0m
+[96msrc/components/tools/RepairReplaceCalc.jsx[0m:[93m37[0m:[93m36[0m - [91merror[0m[90m ts(1005): [0m')' expected.
+
+[7m37[0m         } else if (costRatio > 0.5 andand ageRatio > 0.5) {
+[7m  [0m [91m                                   ~~~~~~[0m
+
+[96msrc/layouts/ArticleLayout.astro[0m:[93m32[0m:[93m28[0m - [91merror[0m[90m ts(7006): [0mParameter 'faq' implicitly has an 'any' type.
+
+[7m32[0m const extraFaqs = faqs.map(faq => ({
+[7m  [0m [91m                           ~~~[0m
+
+[96msrc/layouts/BaseLayout.astro[0m:[93m12[0m:[93m52[0m - [93mwarning[0m[90m ts(6133): [0m'schema' is declared but its value is never read.
+
+[7m12[0m const { title, description, canonicalURL, country, schema } = Astro.props;
+[7m  [0m [93m                                                   ~~~~~~[0m
+
+[96msrc/pages/about.astro[0m:[93m6[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'pages' is declared but its value is never read.
+
+[7m6[0m const pages = [
+[7m [0m [93m      ~~~~~[0m
+
+[96msrc/pages/index.astro[0m:[93m14[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'silos' is declared but its value is never read.
+
+[7m14[0m const silos = [
+[7m  [0m [93m      ~~~~~[0m
+
+[96msrc/pages/[country]/index.astro[0m:[93m15[0m:[93m35[0m - [91merror[0m[90m ts(2769): [0mNo overload matches this call.
+  Overload 1 of 2, '(collection: keyof DataEntryMap, filter?: ((entry: { id: string; body?: string | undefined; collection: "nz"; data: { country: "nz" | "ca"; title: string; description: string; author: string; ... 4 more ...; faqs?: { ...; }[] | undefined; }; rendered?: RenderedContent | undefined; filePath?: string | undefined; } | { ...; }) => entry is { ...; } | { ...; }) | undefined): Promise<...>', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'keyof DataEntryMap'.
+  Overload 2 of 2, '(collection: keyof DataEntryMap, filter?: ((entry: { id: string; body?: string | undefined; collection: "nz"; data: { country: "nz" | "ca"; title: string; description: string; author: string; ... 4 more ...; faqs?: { ...; }[] | undefined; }; rendered?: RenderedContent | undefined; filePath?: string | undefined; } | { ...; }) => unknown) | undefined): Promise<...>', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'keyof DataEntryMap'.
+
+[7m15[0m const fixes = await getCollection(country);
+[7m  [0m [91m                                  ~~~~~~~[0m
+
+[96msrc/pages/[country]/[category]/[slug].astro[0m:[93m2[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'BaseLayout' is declared but its value is never read.
+
+[7m2[0m import BaseLayout from '../../../layouts/BaseLayout.astro';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/tools/error-decoder.astro[0m:[93m32[0m:[93m18[0m - [91merror[0m[90m ts(2322): [0mType '{ text: string; href: string; }[]' is not assignable to type '{ name: string; href: string; }[]'.
+  Property 'name' is missing in type '{ text: string; href: string; }' but required in type '{ name: string; href: string; }'.
+
+[7m32[0m     <Breadcrumbs items={breadcrumbs} />
+[7m  [0m [91m                 ~~~~~[0m
+[96msrc/pages/tools/error-decoder.astro[0m:[93m26[0m:[93m20[0m - [91merror[0m[90m ts(2322): [0mType '{ children: any[]; "technician.": boolean; "(Samsung,": boolean; "Bosch,": boolean; "LG,": boolean; "Paykel)": boolean; "fix,": boolean; "list,": boolean; "sources.'": boolean; title: string; description: string; t: true; ... 17 more ...; schema: string; }' is not assignable to type 'IntrinsicAttributes & Props'.
+  Property 't' does not exist on type 'IntrinsicAttributes & Props'.
+
+[7m26[0m   description='Don't wait for a technician. Enter your appliance error code (Samsung, Bosch, LG, Fisher and Paykel) to get an instant fix, tool list, and local part sources.'
+[7m  [0m [91m                   ~[0m
+
+[96msrc/pages/tools/heat-pump-cost.astro[0m:[93m37[0m:[93m18[0m - [91merror[0m[90m ts(2322): [0mType '{ text: string; href: string; }[]' is not assignable to type '{ name: string; href: string; }[]'.
+  Property 'name' is missing in type '{ text: string; href: string; }' but required in type '{ name: string; href: string; }'.
+
+[7m37[0m     <Breadcrumbs items={breadcrumbs} />
+[7m  [0m [91m                 ~~~~~[0m
+
+[96msrc/pages/tools/isp-ripoff-detector.astro[0m:[93m32[0m:[93m18[0m - [91merror[0m[90m ts(2322): [0mType '{ text: string; href: string; }[]' is not assignable to type '{ name: string; href: string; }[]'.
+  Property 'name' is missing in type '{ text: string; href: string; }' but required in type '{ name: string; href: string; }'.
+
+[7m32[0m     <Breadcrumbs items={breadcrumbs} />
+[7m  [0m [91m                 ~~~~~[0m
+[96msrc/pages/tools/isp-ripoff-detector.astro[0m:[93m26[0m:[93m20[0m - [91merror[0m[90m ts(2322): [0mType '{ children: any[]; "speed.": boolean; "credit.'": boolean; title: string; description: string; t: true; let: true; Canadian: true; ISPs: true; throttle: true; your: true; Use: true; the: true; ErrorDocs: true; "Rip-off": true; ... 11 more ...; schema: string; }' is not assignable to type 'IntrinsicAttributes & Props'.
+  Property 't' does not exist on type 'IntrinsicAttributes & Props'.
+
+[7m26[0m   description='Don't let Canadian ISPs throttle your speed. Use the ErrorDocs Rip-off Detector to verify your connection and get the exact script to demand a bill credit.'
+[7m  [0m [91m                   ~[0m
+[96msrc/pages/tools/isp-ripoff-detector.astro[0m:[93m5[0m:[93m8[0m - [91merror[0m[90m ts(2440): [0mImport declaration conflicts with local declaration of 'IspRipoffDetector'.
+
+[7m5[0m import IspRipoffDetector from '../../components/tools/IspRipoffDetector';
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/tools/repair-vs-replace.astro[0m:[93m32[0m:[93m18[0m - [91merror[0m[90m ts(2322): [0mType '{ text: string; href: string; }[]' is not assignable to type '{ name: string; href: string; }[]'.
+  Property 'name' is missing in type '{ text: string; href: string; }' but required in type '{ name: string; href: string; }'.
+
+[7m32[0m     <Breadcrumbs items={breadcrumbs} />
+[7m  [0m [91m                 ~~~~~[0m
+[96msrc/pages/tools/repair-vs-replace.astro[0m:[93m25[0m:[93m44[0m - [91merror[0m[90m ts(2322): [0mType '{ children: any[]; "(2026)": boolean; "|": boolean; "ErrorDocs'": boolean; title: string; s: true; Decision: true; Tool: true; description: string; schema: string; }' is not assignable to type 'IntrinsicAttributes & Props'.
+  Property 's' does not exist on type 'IntrinsicAttributes & Props'.
+
+[7m25[0m   title='Repair or Replace? The Technician's Decision Tool (2026) | ErrorDocs'
+[7m  [0m [91m                                           ~[0m
+[96msrc/pages/tools/repair-vs-replace.astro[0m:[93m4[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Footer' is declared but its value is never read.
+
+[7m4[0m import Footer from '../../components/Footer.astro';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+Result (27 files): 
+- 22 errors
+- 0 warnings
+- 11 hints
+

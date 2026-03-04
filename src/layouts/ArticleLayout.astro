@@ -7,7 +7,7 @@ import InstantAnswer from '../components/InstantAnswer.astro';
 import AdSenseBlock from '../components/AdSenseBlock.astro';
 
 const { entry, country = 'nz' } = Astro.props;
-const { title, description, author, lastUpdated, category, instantAnswer } = entry.data;
+const { title, description, author, lastUpdated, category, instantAnswer, faqs = [] } = entry.data;
 
 const formattedDate = typeof lastUpdated === 'string' 
 	? new Date(lastUpdated).toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' })
@@ -20,17 +20,28 @@ const breadcrumbItems = [
 	{ name: title, href: Astro.url.pathname }
 ];
 
+const mainFaq = {
+	"@type": "Question",
+	"name": `How do I fix ${title}?`,
+	"acceptedAnswer": {
+		"@type": "Answer",
+		"text": instantAnswer || description
+	}
+};
+
+const extraFaqs = faqs.map((faq: { question: string; answer: string }) => ({
+	"@type": "Question",
+	"name": faq.question,
+	"acceptedAnswer": {
+		"@type": "Answer",
+		"text": faq.answer
+	}
+}));
+
 const schema = JSON.stringify({
 	"@context": "https://schema.org",
 	"@type": "FAQPage",
-	"mainEntity": [{
-		"@type": "Question",
-		"name": `How do I fix ${title}?`,
-		"acceptedAnswer": {
-			"@type": "Answer",
-			"text": instantAnswer || description
-		}
-	}]
+	"mainEntity": [mainFaq, ...extraFaqs]
 });
 ---
 

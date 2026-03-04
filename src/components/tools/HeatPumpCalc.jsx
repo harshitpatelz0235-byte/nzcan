@@ -133,7 +133,7 @@ const HeatPumpCalc = () => {
                     </div>
                 </div>
 
-                {parseFloat(results.penalty) > 0 andand (
+                {parseFloat(results.penalty) > 0 && (
                     <div className='mt-8 pt-8 border-t border-background/10 relative z-10'>
                         <div className='flex items-center gap-2 text-rose-400 mb-1'>
                             <span className='text-lg'>⚠️</span>

@@ -12,9 +12,9 @@ export async function getStaticPaths() {
 }
 
 const { country } = Astro.params;
-const fixes = await getCollection(country);
+const fixes = await getCollection(country as any);
 
-const categories = [...new Set(fixes.map(f => f.data.category))];
+const categories = [...new Set(fixes.map((f: any) => f.data.category))];
 ---
 
 <BaseLayout 

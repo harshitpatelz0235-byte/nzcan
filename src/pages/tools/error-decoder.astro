@@ -6,9 +6,9 @@ import ErrorCodeDecoder from '../../components/tools/ErrorCodeDecoder';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
 const breadcrumbs = [
-  { text: 'Rescue Hub', href: '/' },
-  { text: 'Tools', href: '/tools/' },
-  { text: 'Universal Error Code Decoder', href: '/tools/error-decoder/' }
+  { name: 'Rescue Hub', href: '/' },
+  { name: 'Tools', href: '/tools/' },
+  { name: 'Universal Error Code Decoder', href: '/tools/error-decoder/' }
 ];
 
 const structuredData = JSON.stringify({
@@ -23,7 +23,7 @@ const structuredData = JSON.stringify({
 
 <BaseLayout 
   title='Universal Error Code Decoder: Instant Fixes for NZ and Canada (2026) | ErrorDocs'
-  description='Don't wait for a technician. Enter your appliance error code (Samsung, Bosch, LG, Fisher and Paykel) to get an instant fix, tool list, and local part sources.'
+  description={`Do not wait for a technician. Enter your appliance error code (Samsung, Bosch, LG, Fisher and Paykel) to get an instant fix, tool list, and local part sources.`}
   schema={structuredData}
 >
   <Header country='nz' />

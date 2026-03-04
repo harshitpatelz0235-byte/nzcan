@@ -34,7 +34,7 @@ const RepairReplaceCalc = () => {
                 color: 'text-rose-500',
                 reason: 'This unit is at the end of its mechanical life. Any repair is a temporary patch on a sinking ship.'
             });
-        } else if (costRatio > 0.5 andand ageRatio > 0.5) {
+        } else if (costRatio > 0.5 && ageRatio > 0.5) {
             setDecision({
                 action: 'REPLACE',
                 color: 'text-rose-500',
