@@ -1,12 +1,22 @@
 ---
+// src/components/Header.astro
+import { getCollection } from 'astro:content';
+
 const { country = 'nz' } = Astro.props;
 
-const navLinks = [
+// Dynamically fetch unique categories from the content collection
+const allEntries = await getCollection(country as any);
+const uniqueCategories = [...new Set(allEntries.map(entry => entry.data.category))].sort();
+
+const navLinks = uniqueCategories.map(cat => ({
+  name: cat.charAt(0).toUpperCase() + cat.slice(1),
+  href: `/${country}/${cat.toLowerCase().replace(/\s+/g, '-')}/`
+}));
+
+// Fallback if no entries found yet
+const finalNavLinks = navLinks.length > 0 ? navLinks : [
   { name: 'Telecom', href: `/${country}/telecom/` },
   { name: 'Appliances', href: `/${country}/appliances/` },
-  { name: 'Home DIY', href: `/${country}/home-diy/` },
-  { name: 'Finance Apps', href: `/${country}/finance/` },
-  { name: 'Streaming', href: `/${country}/streaming/` },
 ];
 ---
 
@@ -14,23 +24,24 @@ const navLinks = [
   <div class="container mx-auto px-4 h-20 flex items-center justify-between">
     <div class="flex items-center gap-8">
       <a href="/" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 bg-foreground text-background rounded-lg flex items-center justify-center font-black text-xl shadow-2xl group-hover:bg-primary group-hover:text-white transition-all duration-300">HF</div>
+        <div class="w-11 h-11 bg-foreground text-background rounded-lg flex items-center justify-center font-black text-xl shadow-2xl group-hover:bg-primary group-hover:text-white transition-all duration-300">ED</div>
         <div class="flex flex-col -gap-1">
-          <span class="text-xl font-black tracking-tighter text-foreground uppercase">HumanFix</span>
-          <span class="text-[10px] uppercase font-bold tracking-[0.2em] text-foreground/40 leading-none">Emergency Tech Rescue</span>
+          <span class="text-xl font-black tracking-tighter text-foreground uppercase">ErrorDocs</span>
+          <span class="text-[10px] uppercase font-bold tracking-[0.2em] text-foreground/40 leading-none">The Tech Rescue Hub</span>
         </div>
       </a>
       
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center gap-6">
-        {navLinks.map(link => (
-          <a href={link.href} class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
+        {finalNavLinks.map(link => (
+          <a href={link.href} class="text-[10px] font-black uppercase tracking-widest text-foreground/50 hover:text-primary transition-all">
             {link.name}
           </a>
         ))}
       </nav>
     </div>
 
+    <div class="flex items-center gap-6">
       <!-- Theme Toggle -->
       <button
         id="theme-toggle"
@@ -75,12 +86,10 @@ const navLinks = [
     <button id="close-menu-btn" class="absolute top-6 right-6 p-2 text-foreground/50 hover:text-primary">
        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
-    {navLinks.map(link => (
-      <a href={link.href} class="text-2xl font-black text-foreground hover:text-primary transition-colors tracking-tight">
+    {finalNavLinks.map(link => (
+      <a href={link.href} class="text-2xl font-black text-foreground hover:text-primary transition-colors tracking-tight uppercase italic">
         {link.name}
       </a>
     ))}
   </div>
 </header>
-
-
