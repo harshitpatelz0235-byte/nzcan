@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SearchBar from '../components/SearchBar.astro';
+
+const emergencyFixes = [
+	{ title: 'Router Flashing Red?', icon: '📡', color: 'bg-rose-500', href: '/nz/telecom/' },
+	{ title: 'Fridge Not Cooling?', icon: '🧊', color: 'bg-sky-500', href: '/nz/appliances/' },
+	{ title: 'Bank App Locked?', icon: '🔒', color: 'bg-amber-500', href: '/nz/finance/' },
+	{ title: 'TV Buffering?', icon: '📺', color: 'bg-indigo-500', href: '/nz/streaming/' },
+];
+
+const silos = [
+	{ 
+		name: 'Internet & Telecom', 
+		desc: 'Modem setups, fiber outages, and router fixes.',
+		brands: ['Spark', 'Chorus', 'Rogers', 'Bell'],
+		href: '/nz/telecom/',
+		icon: '📡'
+	},
+	{ 
+		name: 'Home Appliances', 
+		desc: 'Dishwashers, washing machines, and fridge errors.',
+		brands: ['Fisher & Paykel', 'Samsung', 'Samsung', 'LG'],
+		href: '/nz/appliances/',
+		icon: '🧊'
+	},
+	{ 
+		name: 'Finance & Banking', 
+		desc: 'App logins, account locks, and digital switchovers.',
+		brands: ['ASB', 'ANZ', 'TD Bank', 'Scotiabank'],
+		href: '/nz/finance/',
+		icon: '🔒'
+	},
+	{ 
+		name: 'Streaming & TV', 
+		desc: 'Buffering, login issues, and smart TV setups.',
+		brands: ['Netflix', 'TVNZ+', 'Crave', 'Disney+'],
+		href: '/nz/streaming/',
+		icon: '📺'
+	},
+	{ 
+		name: 'Home DIY & Smart Home', 
+		desc: 'Security cams, smart bulbs, and DIY electronics.',
+		brands: ['Ring', 'Hue', 'Lutron', 'Eufy'],
+		href: '/nz/home-diy/',
+		icon: '🏠'
+	},
+];
+---
+
+<BaseLayout 
+	title="Instant Fixes for Frustrating Tech" 
+	description="HumanFix provides manual, real-world fixes for New Zealand and Canadian devices. No AI guesses, just actionable solutions for appliances, telecom, and more."
+>
+	<Header country="nz" />
+
+	<main>
+		{/* Hero Section - The Panic Search */}
+		<section class="py-24 relative overflow-hidden">
+			<div class="container mx-auto px-4 text-center relative z-10">
+				<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-accent text-background text-xs font-black mb-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] uppercase tracking-widest">
+					<span class="w-2 h-2 rounded-full bg-background animate-pulse"></span>
+					Verified Human Solutions
+				</div>
+
+				<h1 class="text-6xl lg:text-[120px] font-black mb-6 tracking-tighter leading-[0.85] text-foreground uppercase">
+					Rescue <br /> <span class="text-primary italic">Your Tech.</span>
+				</h1>
+
+				<p class="text-lg text-foreground/70 max-w-xl mx-auto mb-16 font-medium leading-relaxed tech-mono">
+					Direct human troubleshooting for New Zealand & Canada. Zero AI guesses. Just the fix.
+				</p>
+
+				<SearchBar />
+				
+				<div class="mt-8 flex flex-wrap justify-center gap-4 text-[10px] font-black uppercase tracking-tighter text-foreground/40">
+					<span>Trending:</span>
+					<a href="/nz/appliances/fisher-paykel-e30/" class="hover:text-primary transition-colors">F&P E30 Fix</a>
+					<span>•</span>
+					<a href="#" class="hover:text-primary transition-colors">Spark Red Light</a>
+					<span>•</span>
+					<a href="#" class="hover:text-primary transition-colors">Bell Giga Hub</a>
+				</div>
+			</div>
+		</section>
+
+		{/* Emergency Grids */}
+		<section class="container mx-auto px-4 -mt-20 relative z-10">
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+				{emergencyFixes.map((fix) => (
+					<a href={fix.href} class="group">
+						<div class="h-40 glass rounded-2xl p-6 flex flex-col justify-between hover:scale-[1.02] transition-all border-b-4 border-b-primary shadow-xl">
+							<span class="text-3xl">{fix.icon}</span>
+							<span class="text-lg font-bold group-hover:text-primary transition-colors">{fix.title}</span>
+						</div>
+					</a>
+				))}
+			</div>
+		</section>
+
+		{/* Documentation Index (Errordocs Style) */}
+		<section class="pb-32 container mx-auto px-4">
+			<div class="flex items-center gap-4 mb-12">
+				<h2 class="text-2xl font-bold uppercase tracking-widest text-foreground">Documentation Index</h2>
+				<div class="h-[1px] flex-grow bg-foreground/10"></div>
+			</div>
+			
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+				{[
+					{ name: 'Telecom', icon: '📡', count: '124 Fixes', brands: 'Spark, Chorus, Rogers' },
+					{ name: 'Appliances', icon: '🔌', count: '89 Fixes', brands: 'F&P, Samsung, LG' },
+					{ name: 'Home DIY', icon: '🛠️', count: '45 Fixes', brands: 'Ring, Hue, Eufy' },
+					{ name: 'Finance', icon: '💳', count: '67 Fixes', brands: 'ASB, TD, Scotiabank' },
+					{ name: 'Streaming', icon: '📺', count: '32 Fixes', brands: 'Netflix, Crave, Disney' }
+				].map(cat => (
+					<a href={`/nz/${cat.name.toLowerCase().replace(' ', '-')}/`} class="group relative">
+						<div class="bg-background border border-foreground/5 hover:border-foreground p-6 rounded-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:group-hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+							<div class="text-3xl mb-4 transition-transform group-hover:scale-110">{cat.icon}</div>
+							<h3 class="font-black text-xs uppercase tracking-widest mb-1 group-hover:text-primary transition-colors">{cat.name}</h3>
+							<p class="text-[9px] text-foreground/30 font-bold uppercase tracking-tight mb-4 truncate">{cat.brands}</p>
+							<div class="flex items-center justify-between">
+								<span class="text-[10px] text-foreground/40 font-bold uppercase tracking-tighter">{cat.count}</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary opacity-0 group-hover:opacity-100 transition-all"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+							</div>
+						</div>
+					</a>
+				))}
+			</div>
+		</section>
+
+		{/* Why HumanFix Section */}
+		<section class="bg-primary/5 py-32 rounded-[4rem] mx-4 mb-20 overflow-hidden relative">
+			<div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
+				<div class="w-full lg:w-1/2">
+					<h2 class="text-4xl lg:text-6xl font-black mb-8 leading-tight">Authentic fixes. <br /> <span class="text-primary italic">Zero</span> AI content.</h2>
+					<div class="space-y-6">
+						{[
+							{ title: 'Manually Verified', desc: 'Every fix is tested by a real technician or power user.' },
+							{ title: 'Geo-Specific', desc: 'Separate silos for NZ and CA ensure local relevance.' },
+							{ title: 'Speed-Optimized', desc: 'Built for instant loading and zero layout shift.' }
+						].map((item) => (
+							<div class="flex gap-4">
+								<div class="w-6 h-6 rounded-full bg-primary flex-shrink-0 mt-1 flex items-center justify-center">
+									<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+								</div>
+								<div>
+									<h4 class="font-bold text-lg mb-1">{item.title}</h4>
+									<p class="text-foreground/60">{item.desc}</p>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+				<div class="w-full lg:w-1/2 relative">
+					<div class="aspect-square premium-gradient rounded-[3rem] shadow-2xl rotate-3 flex items-center justify-center overflow-hidden">
+						{/* Mock App Interface or Graphic */}
+						<div class="w-[80%] h-[80%] bg-white/10 backdrop-blur-3xl rounded-[2rem] border border-white/20 p-8">
+							<div class="w-24 h-4 rounded-full bg-white/20 mb-6"></div>
+							<div class="w-full h-8 rounded-xl bg-white/10 mb-4"></div>
+							<div class="w-full h-8 rounded-xl bg-white/10 mb-4"></div>
+							<div class="w-full h-32 rounded-3xl bg-white/20 mb-8 border border-white/30 flex items-center justify-center">
+								<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+							</div>
+							<div class="flex justify-between items-center">
+								<div class="w-16 h-8 rounded-lg bg-green-500/50"></div>
+								<div class="w-32 h-8 rounded-lg bg-white/10"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</BaseLayout>
+
+<style>
+	@keyframes fade-in {
+		from { opacity: 0; transform: translateY(10px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+	.animate-fade-in {
+		animation: fade-in 0.8s ease-out forwards;
+	}
+</style>

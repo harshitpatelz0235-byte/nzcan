@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Privacy Policy" description="Privacy Policy for HumanFix - Tech Rescue Center.">
+	<Header country="nz" />
+	<main class="container mx-auto px-4 py-20 max-w-3xl">
+		<h1 class="text-5xl font-black mb-12 tracking-tight">Privacy <span class="text-primary">Policy</span></h1>
+		
+		<div class="prose prose-lg dark:prose-invert max-w-none">
+			<p class="lead">At HumanFix, we take your privacy seriously. This policy outlines how we handle your data and our relationship with Google AdSense.</p>
+			
+			<h2>1. Data Collection</h2>
+			<p>We do not collect personal information unless you explicitly contact us via email. Our server logs may collect standard anonymous data such as IP address and browser type for performance monitoring.</p>
+			
+			<h2>2. Google AdSense & Third-Party Cookies</h2>
+			<div class="bg-primary/5 p-8 rounded-2xl border border-primary/10 my-8">
+				<p><strong>Crucial Information for Users:</strong> Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to HumanFix or other websites.</p>
+				<p>Google's use of advertising cookies enables it and its partners to serve ads to our users based on their visit to HumanFix and/or other sites on the Internet.</p>
+			</div>
+			<p>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank">Google Ads Settings</a>.</p>
+			
+			<h2>3. External Links</h2>
+			<p>Our guides may link to external websites. We are not responsible for the privacy practices of those sites.</p>
+			
+			<h2>4. Updates</h2>
+			<p>We update this policy from time to time as we add new features or comply with new regulations. Last updated: March 2026.</p>
+		</div>
+	</main>
+	<Footer />
+</BaseLayout>

@@ -1,0 +1,113 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+	canonicalURL?: string;
+	country?: 'nz' | 'ca';
+	schema?: string;
+}
+
+const { title, description, canonicalURL, country, schema } = Astro.props;
+const siteName = "HumanFix";
+const currentURL = Astro.url.href;
+---
+
+<!doctype html>
+<html lang={country === 'nz' ? 'en-NZ' : country === 'ca' ? 'en-CA' : 'en'}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | {siteName}</title>
+
+		{/* Canonical URL */}
+		<link rel="canonical" href={canonicalURL || currentURL} />
+
+		{/* Hreflang Tags */}
+		<link rel="alternate" hreflang="en-nz" href={`${Astro.url.origin}/nz/`} />
+		<link rel="alternate" hreflang="en-ca" href={`${Astro.url.origin}/ca/`} />
+		<link rel="alternate" hreflang="x-default" href={Astro.url.origin} />
+
+		{/* Typography */}
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+	<body class="min-h-screen selection:bg-primary selection:text-white bg-background text-foreground transition-colors duration-300">
+		<slot />
+
+		{/* Theme & Interactivity Initialization */}
+		<script is:inline>
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return 'dark';
+				}
+				return 'light';
+			})();
+		
+			if (theme === 'light') {
+				document.documentElement.classList.remove('dark');
+			} else {
+				document.documentElement.classList.add('dark');
+			}
+			window.localStorage.setItem('theme', theme);
+
+			// Interactivity initialization
+			document.addEventListener('DOMContentLoaded', () => {
+				// Theme Toggle Logic
+				const toggleBtn = document.getElementById("theme-toggle");
+				const circle = document.getElementById('toggle-circle');
+				const sun = document.getElementById('sun-icon');
+				const moon = document.getElementById('moon-icon');
+
+				const updateToggleUI = (isDark) => {
+					if (circle) {
+						if (isDark) {
+							circle.style.transform = 'translateX(24px)';
+							sun?.classList.add('hidden');
+							moon?.classList.remove('hidden');
+						} else {
+							circle.style.transform = 'translateX(0px)';
+							sun?.classList.remove('hidden');
+							moon?.classList.add('hidden');
+						}
+					}
+				};
+
+				if (toggleBtn) {
+					toggleBtn.addEventListener("click", () => {
+						const isDark = document.documentElement.classList.toggle("dark");
+						localStorage.setItem("theme", isDark ? "dark" : "light");
+						updateToggleUI(isDark);
+					});
+					// Initial sync
+					updateToggleUI(document.documentElement.classList.contains("dark"));
+				}
+
+				// Mobile Menu Logic
+				const menuBtn = document.getElementById('mobile-menu-btn');
+				const closeBtn = document.getElementById('close-menu-btn');
+				const menu = document.getElementById('mobile-menu');
+
+				if (menuBtn && closeBtn && menu) {
+					const toggleMenu = () => {
+						menu.classList.toggle('opacity-0');
+						menu.classList.toggle('pointer-events-none');
+						menu.classList.toggle('translate-y-4');
+						document.body.classList.toggle('overflow-hidden');
+					};
+
+					menuBtn.addEventListener('click', toggleMenu);
+					closeBtn.addEventListener('click', toggleMenu);
+				}
+			});
+		</script>
+	</body>
+</html>

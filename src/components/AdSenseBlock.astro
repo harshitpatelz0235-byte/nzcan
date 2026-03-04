@@ -1,0 +1,11 @@
+---
+// src/components/AdSenseBlock.astro
+const { slot = 'default' } = Astro.props;
+---
+
+<!-- 
+  AdSense temporarily disabled as per user request. 
+  The site is currently in 'Human Real feel' mode.
+  Will re-enable when ready for monetization phase.
+-->
+<div class="ads-hidden-placeholder my-6" data-slot={slot}></div>

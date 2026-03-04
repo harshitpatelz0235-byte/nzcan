@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Terms of Service" description="Terms of Service for HumanFix - Tech Rescue Center.">
+	<Header country="nz" />
+	<main class="container mx-auto px-4 py-20 max-w-3xl">
+		<h1 class="text-5xl font-black mb-12 tracking-tight">Terms of <span class="text-primary">Service</span></h1>
+		
+		<div class="prose prose-lg dark:prose-invert max-w-none text-foreground/80">
+			<h2>1. Acceptance of Terms</h2>
+			<p>By accessing HumanFix, you agree to follow these terms. If you're here to fix your tech, you're welcome! If not, please find another site.</p>
+			
+			<h2>2. Manual Fix Disclaimer</h2>
+			<div class="bg-amber-500/10 p-8 rounded-2xl border border-amber-500/20 my-8 text-amber-900 dark:text-amber-200">
+				<p><strong>Warning:</strong> Technical repairs can be dangerous. While our fixes are manually verified, HumanFix is not liable for any damage to your hardware or injury resulting from following our guides. Proceed at your own risk.</p>
+			</div>
+			
+			<h2>3. Content Ownership</h2>
+			<p>All content on HumanFix is protected by copyright. You may not scrape or replicate our guides without express permission. We are dedicated to pure, human-written content.</p>
+			
+			<h2>4. No Warranty</h2>
+			<p>We provide these fixes "as is". Tech changes fast, and what worked yesterday might need an update today. We do our best to keep things fresh.</p>
+		</div>
+	</main>
+	<Footer />
+</BaseLayout>

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const nzEntries = await getCollection('nz');
+  const caEntries = await getCollection('ca');
+  
+  const allEntries = [
+    ...nzEntries.map(entry => {
+      const parts = entry.id.split('/');
+      return { 
+        params: { country: 'nz', category: parts[0], slug: parts[1] || entry.id }, 
+        props: { entry, country: 'nz' } 
+      };
+    }),
+    ...caEntries.map(entry => {
+      const parts = entry.id.split('/');
+      return { 
+        params: { country: 'ca', category: parts[0], slug: parts[1] || entry.id }, 
+        props: { entry, country: 'ca' } 
+      };
+    })
+  ];
+
+  return allEntries;
+}
+
+const { entry, country } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<ArticleLayout {entry} {country}>
+	<Content />
+</ArticleLayout>

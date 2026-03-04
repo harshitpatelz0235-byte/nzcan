@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	return [
+		{ params: { country: 'nz' } },
+		{ params: { country: 'ca' } }
+	];
+}
+
+const { country } = Astro.params;
+const fixes = await getCollection(country);
+
+const categories = [...new Set(fixes.map(f => f.data.category))];
+---
+
+<BaseLayout 
+	title={`${country === 'nz' ? 'New Zealand' : 'Canada'} Tech Rescue Center`}
+	description={`Manual tech fixes and troubleshooting guides specifically for ${country === 'nz' ? 'New Zealand' : 'Canada'}.`}
+	country={country as 'nz' | 'ca'}
+>
+	<Header country={country as 'nz' | 'ca'} />
+	
+	<main class="container mx-auto px-4 py-20">
+		<h1 class="text-5xl font-black mb-12 tracking-tight">
+			{country?.toUpperCase()} <span class="text-primary">Tech Rescue Center</span>
+		</h1>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{categories.map(cat => (
+				<a href={`/${country}/${cat.toLowerCase().replace(/\s+/g, '-')}/`} class="group">
+					<div class="glass p-8 rounded-3xl border border-white/5 hover:border-primary/20 transition-all flex flex-col justify-between h-48">
+						<h2 class="text-2xl font-bold group-hover:text-primary transition-colors">{cat}</h2>
+						<span class="text-primary font-bold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+							Browse {cat} Fixes
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+						</span>
+					</div>
+				</a>
+			))}
+		</div>
+	</main>
+
+	<Footer />
+</BaseLayout>

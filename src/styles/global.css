@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0070f3;
+  --color-secondary: #ff0080;
+  --color-accent: #f59e0b;
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+  --color-card: rgba(255, 255, 255, 0.9);
+  --color-glass: rgba(255, 255, 255, 0.6);
+  --color-glass-border: rgba(0, 0, 0, 0.08);
+  --color-success: #10b981;
+}
+
+:root {
+  --grid-color: rgba(0, 0, 0, 0.03);
+}
+
+:root.dark {
+  --grid-color: rgba(255, 255, 255, 0.03);
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-primary: #3291ff;
+    --color-secondary: #ff0080;
+    --color-accent: #fbbf24;
+    --color-background: #000000;
+    --color-foreground: #ffffff;
+    --color-card: rgba(18, 18, 18, 0.8);
+    --color-glass: rgba(0, 0, 0, 0.3);
+    --color-glass-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Force Light Mode if class is present */
+:root:not(.dark) {
+  --color-background: #ffffff;
+  --color-foreground: #111827;
+  --color-primary: #0070f3;
+  --color-accent: #f59e0b;
+  --color-glass: rgba(255, 255, 255, 0.4);
+}
+
+/* Force Dark Mode if class is present */
+:root.dark {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-primary: #3291ff;
+  --color-accent: #fbbf24;
+  --color-glass: rgba(0, 0, 0, 0.3);
+}
+
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Technical Monospace Accents */
+.tech-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  letter-spacing: -0.02em;
+}
+
+.glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-glass-border);
+  border-radius: 12px;
+}
+
+.premium-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Base Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  transition: all 0.3s ease;
+}
+
+input {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

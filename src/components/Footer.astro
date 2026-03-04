@@ -1,0 +1,50 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-foreground/5 border-t border-white/10 pt-16 pb-8 mt-20">
+	<div class="container mx-auto px-4">
+		<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+			<div class="col-span-1 md:col-span-2">
+				<a href="/" class="flex items-center gap-2 mb-6">
+					<div class="w-8 h-8 premium-gradient rounded-lg flex items-center justify-center text-white font-bold text-lg">HF</div>
+					<span class="text-xl font-bold tracking-tight text-foreground">HumanFix</span>
+				</a>
+				<p class="text-foreground/60 max-w-sm mb-6 leading-relaxed">
+					HumanFix is a team of tech enthusiasts dedicated to providing manual, real-world fixes for frustrating tech problems. No AI guesses, just actionable solutions.
+				</p>
+			</div>
+
+			<div>
+				<h4 class="font-bold text-foreground mb-6 uppercase tracking-wider text-xs">Navigation</h4>
+				<ul class="space-y-4">
+					<li><a href="/nz/" class="text-foreground/60 hover:text-primary transition-colors text-sm">New Zealand Fixes</a></li>
+					<li><a href="/ca/" class="text-foreground/60 hover:text-primary transition-colors text-sm">Canada Fixes</a></li>
+					<li><a href="/about" class="text-foreground/60 hover:text-primary transition-colors text-sm">About HumanFix</a></li>
+					<li><a href="/contact" class="text-foreground/60 hover:text-primary transition-colors text-sm">Contact Support</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h4 class="font-bold text-foreground mb-6 uppercase tracking-wider text-xs">Legal</h4>
+				<ul class="space-y-4">
+					<li><a href="/privacy-policy" class="text-foreground/60 hover:text-primary transition-colors text-sm">Privacy Policy</a></li>
+					<li><a href="/terms-of-service" class="text-foreground/60 hover:text-primary transition-colors text-sm">Terms of Service</a></li>
+					<li><a href="/sitemap-index.xml" class="text-foreground/60 hover:text-primary transition-colors text-sm">Sitemap</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+			<p class="text-foreground/40 text-xs">
+				&copy; {year} HumanFix. All rights reserved. Manual fixes for NZ and CA.
+			</p>
+			<div class="flex items-center gap-6">
+				<span class="text-foreground/40 text-xs flex items-center gap-2">
+					<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+					Live Indexing Enabled
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>

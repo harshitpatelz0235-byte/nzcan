@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pages = [
+	{
+		title: "About HumanFix",
+		description: "Real tech fixes by real people. No AI guesses.",
+		content: `
+			<h2>Our Story</h2>
+			<p>We're a team of tech enthusiasts tired of AI-generated advice that doesn't work. HumanFix was started to document manual, real-world fixes for New Zealand and Canadian devices. Our goal is to hit 500 articles of pure, actionable tech rescue guides.</p>
+			<p>Every fix on this site is manually verified by a technician or a power user who has actually encountered the problem. We believe in high-speed, search-first utility that gets your tech back on track without the fluff.</p>
+		`
+	},
+	{
+		title: "Privacy Policy",
+		description: "How we handle your data.",
+		content: `
+			<h2>Google AdSense & Cookies</h2>
+			<p>HumanFix uses Google AdSense to serve personalized ads. Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</p>
+			<p>Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet. Users may opt out of personalized advertising by visiting Ads Settings.</p>
+		`
+	},
+	{
+		title: "Contact Us",
+		description: "Get in touch with the tech rescue team.",
+		content: `
+			<p>Have a tech problem we haven't covered yet? Or found an error in one of our guides? Reach out to us at <strong>support@humanfix.com</strong>.</p>
+			<p>We prioritize fixes for New Zealand and Canadian hardware, so if you have a local brand that's acting up, let us know!</p>
+		`
+	}
+];
+---
+
+{/* I'll generate the pages dynamically in a real build, but for now let's createAbout as a starter */}
+<BaseLayout title="About HumanFix" description="Real tech fixes by real people for NZ and CA.">
+	<Header country="nz" />
+	<main class="container mx-auto px-4 py-20 max-w-3xl">
+		<h1 class="text-5xl font-black mb-8 tracking-tight">About <span class="text-primary">HumanFix</span></h1>
+		<div class="prose prose-lg dark:prose-invert max-w-none">
+			<h2>The Tech Rescue Center</h2>
+			<p>HumanFix is a boutique tech rescue center focused on providing the most accurate, manual fixes for New Zealand and Canadian tech problems. Whether your Fisher & Paykel dishwasher is leaking or your Spark modem is flashing red, we provide the exact steps to fix it.</p>
+			
+			<h3>Our Mission</h3>
+			<p>To reach 500 high-quality, SEO-optimized articles that help 200,000+ people every month resolve their tech frustrations. We focus on "Anti-Bounce" UX, ensuring you find the answer within seconds of landing on our site.</p>
+			
+			<div class="bg-primary/5 p-8 rounded-3xl border border-primary/10 my-12">
+				<h4 class="font-bold text-xl mb-4">Why we do this?</h4>
+				<p class="text-foreground/70 italic">"Technology is supposed to work for us, not make us want to throw it out the window. We started HumanFix to bring manual, human-verified troubleshooting back to the internet."</p>
+			</div>
+		</div>
+	</main>
+	<Footer />
+</BaseLayout>

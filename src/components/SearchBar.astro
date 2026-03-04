@@ -1,0 +1,90 @@
+---
+// SearchBar Component using Fuse.js for local markdown filtering
+---
+
+<div class="relative max-w-2xl mx-auto w-full group">
+    <div class="absolute -inset-1 premium-gradient rounded-2xl blur opacity-25 group-focus-within:opacity-50 transition duration-500"></div>
+	<div class="relative">
+		<input
+			type="text"
+			id="site-search"
+			placeholder="Enter your error code or device (e.g. F&P E30)..."
+			class="w-full h-16 pl-14 pr-6 rounded-2xl bg-background border border-foreground/10 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none text-lg lg:text-xl font-medium shadow-2xl transition-all placeholder:text-foreground/30"
+		/>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			class="absolute left-5 top-1/2 -translate-y-1/2 text-foreground/40 w-6 h-6 group-focus-within:text-primary transition-colors"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke="currentColor"
+		>
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+		</svg>
+	</div>
+
+	<div
+		id="search-results"
+		class="absolute top-20 left-0 right-0 glass rounded-2xl shadow-3xl overflow-hidden hidden transform origin-top transition-all duration-300 scale-95 opacity-0 z-50 p-2"
+	>
+		<div class="max-h-[400px] overflow-y-auto space-y-1" id="results-list">
+			{/* Results populated by JS */}
+		</div>
+	</div>
+</div>
+
+<script>
+	import Fuse from 'fuse.js';
+
+	// We'll expose this search data via a small JSON endpoint or global var in production
+	// For now, let's assume we have a simple search index
+	const searchData = [
+		{ title: 'Fisher & Paykel E30 Error', country: 'nz', slug: 'fisher-paykel-e30', category: 'appliances' },
+		{ title: 'Spark Modem Red Light Fix', country: 'nz', slug: 'spark-modem-red-light', category: 'telecom' },
+		{ title: 'Bell Giga Hub Flashing Red', country: 'ca', slug: 'bell-giga-hub-red', category: 'telecom' }
+	];
+
+	const fuse = new Fuse(searchData, {
+		keys: ['title'],
+		threshold: 0.3
+	});
+
+	const searchInput = document.getElementById('site-search') as HTMLInputElement;
+	const resultsContainer = document.getElementById('search-results');
+	const resultsList = document.getElementById('results-list');
+
+	searchInput?.addEventListener('input', (e) => {
+		const target = e.target as HTMLInputElement;
+		const query = target.value;
+
+		if (query.length > 1) {
+			const results = fuse.search(query);
+			
+			if (results.length > 0) {
+				resultsContainer?.classList.remove('hidden', 'scale-95', 'opacity-0');
+				resultsContainer?.classList.add('scale-100', 'opacity-100');
+				
+				if (resultsList) {
+					resultsList.innerHTML = results.map(result => `
+						<a href="/${result.item.country}/${result.item.category}/${result.item.slug}/" class="block p-4 hover:bg-primary/10 rounded-xl transition-colors group">
+							<div class="flex items-center justify-between">
+								<span class="font-bold text-foreground group-hover:text-primary">${result.item.title}</span>
+								<span class="text-[10px] uppercase font-black px-2 py-1 rounded-full bg-foreground/10 text-foreground/50">${result.item.country}</span>
+							</div>
+						</a>
+					`).join('');
+				}
+			} else {
+				resultsContainer?.classList.add('hidden');
+			}
+		} else {
+			resultsContainer?.classList.add('hidden');
+		}
+	});
+
+	// Close on click outside
+	document.addEventListener('click', (e) => {
+		if (!searchInput?.contains(e.target as Node) && !resultsContainer?.contains(e.target as Node)) {
+			resultsContainer?.classList.add('hidden');
+		}
+	});
+</script>
