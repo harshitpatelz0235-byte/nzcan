@@ -1,0 +1,13 @@
+[2m04:18:33[22m [34m[content][39m Syncing content
+[33m[1m04:18:33[22m [WARN] [glob-loader][39m Duplicate id "telecom/2degrees-fritzbox-secret-menu" found in C:\Users\harshraj\Downloads\nzcan\src\content\nz\telecom\2degrees-fritzbox-secret-menu.md. Later items with the same id will overwrite earlier ones.
+[33m[1m04:18:33[22m [WARN] [glob-loader][39m Duplicate id "telecom/chorus-ont-red-los" found in C:\Users\harshraj\Downloads\nzcan\src\content\nz\telecom\chorus-ont-red-los.md. Later items with the same id will overwrite earlier ones.
+
+bad indentation of a sequence entry
+  [1mLocation:[22m
+    [4mC:\Users\harshraj\Downloads\nzcan\src\content\nz\telecom\slingshot-firmware-bug-voip-fix.md:12:4[24m
+  [1mStack trace:[22m
+[2m    at generateError (file:///C:/Users/harshraj/Downloads/nzcan/node_modules/js-yaml/dist/js-yaml.mjs:1289:10)
+    at readBlockSequence (file:///C:/Users/harshraj/Downloads/nzcan/node_modules/js-yaml/dist/js-yaml.mjs:2111:7)
+    at readBlockMapping (file:///C:/Users/harshraj/Downloads/nzcan/node_modules/js-yaml/dist/js-yaml.mjs:2260:11)
+    at readDocument (file:///C:/Users/harshraj/Downloads/nzcan/node_modules/js-yaml/dist/js-yaml.mjs:2721:3)
+    at load$1 (file:///C:/Users/harshraj/Downloads/nzcan/node_modules/js-yaml/dist/js-yaml.mjs:2810:19)[22m
