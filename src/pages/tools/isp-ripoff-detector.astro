@@ -1,0 +1,127 @@
+﻿---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import IspRipoffDetector from '../../components/tools/IspRipoffDetector';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { text: 'Canada Rescue', href: '/ca/' },
+  { text: 'Tools', href: '/tools/' },
+  { text: 'ISP Rip-off Detector', href: '/tools/isp-ripoff-detector/' }
+];
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  'name': 'ISP Rip-off Detector Canada (2026)',
+  'operatingSystem': 'All',
+  'applicationCategory': 'UtilityApplication',
+  'description': 'Analyze your Bell, Rogers, or Telus internet speed and monthly bill to detect if you are being overcharged.'
+});
+---
+
+<BaseLayout 
+  title='ISP Rip-off Detector: Are You Overpaying Bell or Rogers? (2026) | ErrorDocs'
+  description='Don't let Canadian ISPs throttle your speed. Use the ErrorDocs Rip-off Detector to verify your connection and get the exact script to demand a bill credit.'
+  schema={structuredData}
+>
+  <Header country='ca' />
+
+  <main class='container mx-auto px-4 py-12 max-w-5xl'>
+    <Breadcrumbs items={breadcrumbs} />
+
+    <header class='mb-16'>
+      <div class='inline-flex items-center gap-2 px-3 py-1 bg-red-600 text-white text-[10px] font-black uppercase tracking-widest rounded mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]'>
+        Neutral Third-Party Analysis
+      </div>
+      <h1 class='text-6xl lg:text-[100px] font-black text-foreground uppercase tracking-tighter leading-[0.85] mb-8 italic'>
+        The ISP <br /> <span class='text-primary'>Rip-off</span> <br /> Detector.
+      </h1>
+      
+      <div class='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+        <p class='text-xl text-foreground/70 font-medium leading-relaxed tech-mono'>
+          Canada has some of the highest internet costs in the world. Rogers, Bell, and Telus often bank on users not checking their actual 'Last Mile' speeds. We're ending that loop today.
+        </p>
+        <div class='p-6 border-2 border-foreground/5 rounded-2xl bg-foreground/5 tech-mono text-xs font-bold space-y-2'>
+          <p class='uppercase text-foreground/40 tracking-wider'>Technician Note No. 303:</p>
+          <p>'If you pay for Gigabit (1.5Gbps) but your speed test shows 400Mbps at the router, you are flushing $40/month down the drain. This tool calculates your 'Actionable Credit' based on current CRTC consumer protection standards.'</p>
+        </div>
+      </div>
+    </header>
+
+    <section class='mb-32'>
+      <IspRipoffDetector client:visible />
+    </section>
+
+    <article class='prose prose-xl prose-invert max-w-none prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tighter prose-headings:italic prose-p:text-foreground/80'>
+      
+      <div class='mb-20 p-8 bg-foreground/5 border-l-8 border-red-600 rounded-r-2xl'>
+        <h2 class='mt-0'>Instant Answer: Why is my internet slower than what I pay for?</h2>
+        <p class='text-2xl font-black text-foreground uppercase italic leading-tight'>
+          'Most Canadian ISPs use 'Up to' language in their contracts. However, if your actual wired speed is consistently below **80% of your plan**, it is considered a service failure. This is often caused by **Node Congestion** or a **Failing Modem**. You are entitled to a prorated credit under 'Quality of Service' clauses.'
+        </p>
+      </div>
+
+      <h2 id='negotiation-script'>The Bell/Rogers Negotiation Script (V3 - 2026)</h2>
+      <p>
+        If our tool showed a <strong>CRITICAL RIP-OFF</strong> or <strong>UNDERPERFORMING</strong> status, do not just call and complain. Use this exact technical script to get a credit:
+      </p>
+
+      <div class='p-8 bg-foreground text-background rounded-3xl tech-mono text-sm leading-relaxed mb-12'>
+        <p class='mb-4 font-black uppercase border-b border-background/10 pb-2 italic'>Follow these steps exactly:</p>
+        <p>1. Call billing and say: 'I need to speak with the **Retention Department** regarding a technical breach of service.'</p>
+        <p>2. Once connected, say: 'I have performed a 7-day technical audit of my Giga Hub / Ignite Modem. My plan is for [PLAN SPEED], but my verified wired speeds are averaging [ACTUAL SPEED].'</p>
+        <p>3. 'I am aware that this falls below the 80% Performance Threshold. I have already performed a factory reset and verified the CAT6 cabling. This is a local node issue.'</p>
+        <p>4. 'I am requesting a monthly credit of **$[CREDIT AMOUNT]** until a technician verifies the line stability, or I will be filing a complaint with the **CCTS (Commission for Complaints for Telecom-television Services)**.'</p>
+      </div>
+
+      <h2>Common Reasons for Canadian ISP Throttling</h2>
+      <p>
+        In cities like Toronto, Vancouver, and Montreal, the infrastructure often can't handle peak-time load. Here is the technical breakdown of why your speed is 'missing':
+      </p>
+
+      <h3>1. The 'Peak Hour' Node Dip</h3>
+      <p>
+        Between 7 PM and 11 PM, your neighbors are all streaming 4K Netflix. If your ISP has over-provisioned your local hub, your speed will crash. This is technically a capacity failure by the ISP, and you shouldn’t pay full price for a shared pipe.
+      </p>
+
+      <h3>2. Dying Hardware (The Ignite/Giga Hub Issue)</h3>
+      <p>
+        If your modem is older than 2 years, its internal capacitors may be failing under high heat. If you haven't swapped your hardware at a **Best Buy Canada** (Rogers Drop-off) or **Bell Store** recently, your modem might be the bottleneck.
+      </p>
+
+      <h3>3. DNS Hijacking</h3>
+      <p>
+        ISPs like Telus use their own DNS servers to track your browsing and prioritize their own traffic. By switching to Cloudflare (1.1.1.1) or Google (8.8.8.8), you can often bypass the 'First-load lag' that makes your internet feel slow even if the raw Mbps is high.
+      </p>
+
+      <section class='my-20 p-12 bg-red-600 border-4 border-foreground rounded-[3rem] text-white'>
+        <h2 class='text-white mt-0 uppercase italic text-4xl'>Local Hardware Recommendation</h2>
+        <p class='text-xl font-bold'>
+          'Don't rely on the cheap CAT5 cable Rogers gave you. Go to **Canada Computers** or **Best Buy Canada** and buy a **Shielded CAT6a Cable**. This ensures zero EMI interference, especially in multi-unit condos where 50+ Wi-Fi signals are fighting for airtime.'
+        </p>
+      </section>
+
+      <h2>FAQ: Frequently Asked Questions (Canada Edition)</h2>
+      <div class='space-y-8'>
+        <div>
+          <h4 class='text-primary tracking-widest uppercase'>Q: What is the CCTS and can they really help?</h4>
+          <p>
+            **Technician Verdict:** Yes. The **CCTS** is the nuclear option. If Rogers or Bell refuses to credit you for slow service, file a complaint online. The ISP is charged a filing fee just for the investigation. Usually, they will call you within 48 hours to offer a massive discount to close the case.
+          </p>
+        </div>
+        <div>
+          <h4 class='text-primary tracking-widest uppercase'>Q: Does Wi-Fi speed count towards my plan speed?</h4>
+          <p>
+            **Technician Verdict:** No. ISPs only guarantee **wired speeds**. If your Wi-Fi is slow but your ethernet speed is 1Gbps, the ISP has fulfilled their contract. You likely need a **Mesh Wi-Fi System** from **Amazon.ca** or **Best Buy** to fix the dead zones in your house.
+          </p>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>
+

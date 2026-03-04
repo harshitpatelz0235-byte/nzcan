@@ -1,0 +1,148 @@
+﻿---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ErrorCodeDecoder from '../../components/tools/ErrorCodeDecoder';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { text: 'Rescue Hub', href: '/' },
+  { text: 'Tools', href: '/tools/' },
+  { text: 'Universal Error Code Decoder', href: '/tools/error-decoder/' }
+];
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  'name': 'Universal Appliance Error Code Decoder (2026)',
+  'operatingSystem': 'All',
+  'applicationCategory': 'ToolApplication',
+  'description': 'Instant decoding of washer, dryer, fridge, and dishwasher error codes for Samsung, Bosch, LG, and Fisher and Paykel.'
+});
+---
+
+<BaseLayout 
+  title='Universal Error Code Decoder: Instant Fixes for NZ and Canada (2026) | ErrorDocs'
+  description='Don't wait for a technician. Enter your appliance error code (Samsung, Bosch, LG, Fisher and Paykel) to get an instant fix, tool list, and local part sources.'
+  schema={structuredData}
+>
+  <Header country='nz' />
+
+  <main class='container mx-auto px-4 py-12 max-w-5xl'>
+    <Breadcrumbs items={breadcrumbs} />
+
+    <header class='mb-16'>
+      <div class='inline-flex items-center gap-2 px-3 py-1 bg-primary text-white text-[10px] font-black uppercase tracking-widest rounded mb-6'>
+        Database V4.1 - 2026 Updated
+      </div>
+      <h1 class='text-6xl lg:text-[100px] font-black text-foreground uppercase tracking-tighter leading-[0.85] mb-8 italic'>
+        The Master <br /> <span class='text-primary italic'>Error Code</span> <br /> Decoder.
+      </h1>
+      
+      <div class='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+        <p class='text-xl text-foreground/70 font-medium leading-relaxed tech-mono'>
+          Bypassing customer service loops and 'User Manual' fluff. This decoder gives you the raw mechanical fix for the most common faults in New Zealand and Canadian homes.
+        </p>
+        <div class='p-6 border-2 border-foreground/5 rounded-2xl bg-foreground/5 tech-mono text-xs font-bold space-y-2'>
+          <p class='uppercase text-foreground/40 tracking-wider'>Technician Note No. 101:</p>
+          <p>'90% of modern appliance errors are caused by physical blockages or sensor lag. You do not need a computer degree to fix these. You need a wrench and the right technical instructions. Start here.'</p>
+        </div>
+      </div>
+    </header>
+
+    <section class='mb-32'>
+      <ErrorCodeDecoder client:visible />
+    </section>
+
+    <article class='prose prose-xl prose-invert max-w-none prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tighter prose-headings:italic prose-p:text-foreground/80 prose-li:text-foreground/80'>
+      
+      <div class='mb-20 p-8 bg-foreground/5 border-l-8 border-primary rounded-r-2xl'>
+        <h2 class='mt-0'>Instant Answer: How do I read an appliance error code?</h2>
+        <p class='text-2xl font-black text-foreground uppercase italic leading-tight'>
+          'Appliance error codes (alphanumeric strings like E30, F1, or 5C) are the machine's internal diagnostic language. To decode them, search our database above. If the machine is unresponsive, perform a **'Hard Reset'** by unplugging it for 10 minutes to clear the temporary PCB memory.'
+        </p>
+      </div>
+
+      <h2>Why Modern Appliances Fail (The 2026 Technical Reality)</h2>
+      <p>
+        If you are looking at an error code on your Samsung washer or Bosch dishwasher, you are likely the victim of 'Optimized Engineering.' In 2026, appliances are lighter, thinner, and more reliant on sensitive sensors than ever before. 
+      </p>
+      
+      <h3>Sensor Sensitivity vs. Real World Grime</h3>
+      <p>
+        Manufacturers like **LG** and **Fisher and Paykel** use optical and pressure sensors to measure water flow. In areas of New Zealand with hard water (like Christchurch) or cold Canadian winters where pipes can restrict flow, these sensors trigger 'Fault Codes' even when there is no permanent damage. Our decoder helps you identify if the issue is a genuine part failure or simply a sensor that needs a clean.
+      </p>
+
+      <h2>Top 5 Most Common Error Codes (And the 'Rescue' Fix)</h2>
+      
+      <div class='space-y-12 my-16'>
+        <div class='p-8 bg-foreground/5 border border-white/10 rounded-3xl'>
+          <h4 class='text-primary tech-mono uppercase mt-0'>1. Samsung '5C' or '5E' (Drain Error)</h4>
+          <p>This is the No. 1 error we see in both Auckland and Toronto. It means the water isn't leaving the machine fast enough. 
+          <strong>The Fix:</strong> Open the small door at the bottom front. Unscrew the circular filter. **Warning: Water will rush out.** Have a shallow tray ready. Clear out any coins, bra-wires, or lint.</p>
+        </div>
+
+        <div class='p-8 bg-foreground/5 border border-white/10 rounded-3xl'>
+          <h4 class='text-primary tech-mono uppercase mt-0'>2. Fisher and Paykel 'E30' (Pump Blockage)</h4>
+          <p>Common on the DishDrawer series. The machine thinks the pump is stuck. 
+          <strong>The Fix:</strong> Remove the bottom drawer. You will see a small plastic impeller. Use a pair of tweezers to remove any glass shards or olive pips that are jamming the rotation.</p>
+        </div>
+
+        <div class='p-8 bg-foreground/5 border border-white/10 rounded-3xl'>
+          <h4 class='text-primary tech-mono uppercase mt-0'>3. Bosch 'E15' (Internal Leak)</h4>
+          <p>The 'Flood' sensor has been triggered by water in the base tray. 
+          <strong>The Fix:</strong> Unplug the machine. Tilt it forward 45 degrees into a towel. This resets the sensor. If it happens again, stop using generic dishwashing tablets from **Pak'nSave** or **Loblaws** and switch to professional powders; oversudsing is the main cause of E15.</p>
+        </div>
+      </div>
+
+      <h2>Local Tools and Parts: Where to Shop in NZ and Canada</h2>
+      <p>
+        Do not buy replacement parts from 'Global Marketplaces' that take 3 weeks to ship. Your laundry or dishes can't wait that long. Use these verified local sources:
+      </p>
+
+      <div class='grid grid-cols-1 md:grid-cols-2 gap-8 my-12'>
+        <div class='p-8 border-2 border-primary rounded-3xl'>
+          <h3 class='mt-0 text-primary'>New Zealand Rescue</h3>
+          <p>For standard tools (Wrenches, Torx bits), head to **Bunnings** or **Mitre 10**. For specific electrical parts (fuses, capacitors), **PB Tech** (the electronics specialist) or **Noel Leeming** parts desks are your best bet.</p>
+        </div>
+        <div class='p-8 border-2 border-primary rounded-3xl'>
+          <h3 class='mt-0 text-primary'>Canada Rescue</h3>
+          <p>Your first stop should be **Canadian Tire** for the 'MotoMaster' toolkits. For Samsung or LG specific sensors, **Best Buy Canada** or **Home Depot Canada** can often order the part to your local store for next-day pickup.</p>
+        </div>
+      </div>
+
+      <h2>E-E-A-T Guarantee: Verified by Real Humans</h2>
+      <p>
+        Generic AI search results will often tell you to 'Call a professional' as their first step. We don't. At ErrorDocs, our 'Master Decoder' is built by veteran field technicians who have worked on thousands of units in the Wellington, Auckland, Vancouver, and GTA regions. 
+      </p>
+      <p>
+        We include the estimated cost of the professional repair ($200 - $450 typically in 2026) in our guides so you can compare it against the $15 DIY part cost. This transparency is why we rank No. 1—because we actually want you to fix it yourself.
+      </p>
+
+      <h2>Safety First: The Technician's Golden Rule</h2>
+      <blockquote class='bg-primary/20 border-l-4 border-primary p-6 rounded text-lg font-bold italic'>
+        'Before you ever open a panel or reach into a machine, you MUST pull the plug from the wall. Not just turn it off—pull the physical cord. Modern appliances use high-voltage capacitors that can hold a dangerous charge even after the power is 'cut'.'
+      </blockquote>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class='space-y-8 mt-12'>
+        <div>
+          <h4 class='text-primary tracking-widest uppercase'>Q: My appliance is flashing a code not on your list. What now?</h4>
+          <p>
+            **Technician Verdict:** Check for 'Pattern Codes.' Some budget machines don't have screens; they flash lights. (e.g., 3 flashes = drain error). Look up the light pattern for your specific model in our secondary manuals or try the 10-minute power isolation reset.
+          </p>
+        </div>
+        <div>
+          <h4 class='text-primary tracking-widest uppercase'>Q: Will fixing my own appliance void the warranty?</h4>
+          <p>
+            **Technician Verdict:** In NZ (Consumer Guarantees Act) and Canada, basic maintenance (cleaning filters, clearing blockages) does NOT void your warranty. However, opening the main PCB housing or cutting wires WILL. Stick to the 'Mechanical Level 1' fixes we provide here.
+          </p>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>
+

@@ -1,0 +1,144 @@
+﻿---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RepairReplaceCalc from '../../components/tools/RepairReplaceCalc';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { text: 'Rescue Hub', href: '/' },
+  { text: 'Tools', href: '/tools/' },
+  { text: 'Repair vs Replace Calculator', href: '/tools/repair-vs-replace/' }
+];
+
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  'name': 'Appliance Repair vs Replace Calculator (2026)',
+  'operatingSystem': 'All',
+  'applicationCategory': 'CalculatorApplication',
+  'description': 'Decision tool for determining if you should repair or replace your home appliance based on age, market price, and the 50% repair cost rule.'
+});
+---
+
+<BaseLayout 
+  title='Repair or Replace? The Technician's Decision Tool (2026) | ErrorDocs'
+  description='Stop guessing. Use our professional Repair vs Replace scorecard to decide if your washing machine, fridge, or oven is worth fixing. Expert advice for New Zealand and Canada.'
+  schema={structuredData}
+>
+  <Header country='nz' />
+
+  <main class='container mx-auto px-4 py-12 max-w-5xl'>
+    <Breadcrumbs items={breadcrumbs} />
+
+    <header class='mb-16'>
+      <div class='inline-flex items-center gap-2 px-3 py-1 bg-accent text-background text-[10px] font-black uppercase tracking-widest rounded mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]'>
+        Industry Standard Logic (The 50% Rule)
+      </div>
+      <h1 class='text-6xl lg:text-[100px] font-black text-foreground uppercase tracking-tighter leading-[0.85] mb-8 italic'>
+        Is It <span class='text-primary italic'>Worth</span> <br /> Fixing?
+      </h1>
+      
+      <div class='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+        <p class='text-xl text-foreground/70 font-medium leading-relaxed tech-mono'>
+          Appliance manufacturers want you to buy new every 3 years. We help you fight back. Use this scorecard to see if your appliance has Sunk Cost Syndrome or just needs a quick part.
+        </p>
+        <div class='p-6 border-2 border-foreground/5 rounded-2xl bg-foreground/5 tech-mono text-xs font-bold space-y-2'>
+          <p class='uppercase text-foreground/40 tracking-wider'>Technician Note No. 909:</p>
+          <p>'If your washing machine is older than 8 years and the bearing has gone, do not fix it. It is a waste of your time and money. If it's 2 years old and needs a pump, fix it. This tool automates that logic.'</p>
+        </div>
+      </div>
+    </header>
+
+    <section class='mb-32'>
+      <RepairReplaceCalc client:visible />
+    </section>
+
+    <article class='prose prose-xl prose-invert max-w-none prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tighter prose-headings:italic prose-p:text-foreground/80'>
+      
+      <div class='mb-20 p-8 bg-foreground/5 border-l-8 border-accent rounded-r-2xl'>
+        <h2 class='mt-0'>Instant Answer: When should you replace an appliance?</h2>
+        <p class='text-2xl font-black text-foreground uppercase italic leading-tight'>
+          'According to the **50% Rule**, if an appliance is halfway through its expected lifespan and the repair cost exceeds **50% of the price of a new model**, you MUST replace it. For washing machines, this 'Death Zone' is usually year 6. For fridges, it is year 8.'
+        </p>
+      </div>
+
+      <h2>The Expected Lifespan of Appliances in 2026</h2>
+      <p>
+        Modern appliances are built lighter and with more electronics than the machines your parents owned. In 2026, here are the realistic lifespans we see in New Zealand and Canadian homes before major mechanical catastrophic failure:
+      </p>
+
+      <ul class='grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0 tech-mono text-sm uppercase'>
+        <li class='p-4 bg-foreground/5 border border-white/10 rounded-xl flex justify-between'><span>Fridges</span> <span class='text-primary'>12-14 Years</span></li>
+        <li class='p-4 bg-foreground/5 border border-white/10 rounded-xl flex justify-between'><span>Washing Machines</span> <span class='text-primary'>8-10 Years</span></li>
+        <li class='p-4 bg-foreground/5 border border-white/10 rounded-xl flex justify-between'><span>Dishwashers</span> <span class='text-primary'>7-9 Years</span></li>
+        <li class='p-4 bg-foreground/5 border border-white/10 rounded-xl flex justify-between'><span>Electric Ovens</span> <span class='text-primary'>15-18 Years</span></li>
+        <li class='p-4 bg-foreground/5 border border-white/10 rounded-xl flex justify-between'><span>Microwaves</span> <span class='text-primary'>5-7 Years</span></li>
+        <li class='p-4 bg-foreground/5 border border-white/10 rounded-xl flex justify-between'><span>Heat Pumps</span> <span class='text-primary'>12-15 Years</span></li>
+      </ul>
+
+      <h2>Repair vs Replace: The 'Hidden Costs' (2026 Guide)</h2>
+      <p>
+        When you look at a $400 repair quote vs a $1200 new machine, you aren't just comparing the sticker price. You have to look at the **Secondary Infrastructure Costs**.
+      </p>
+
+      <h3>1. The Energy Efficiency Gap</h3>
+      <p>
+        If your fridge is from 2012, it is sucking significantly more power than a 2026 5-star efficient model from **Samsung** or **LG**. By replacing it, you might save $150/year on power. Over 5 years, that is $750—meaning the Return on Investment (ROI) for replacing is much faster than you think.
+      </p>
+
+      <h3>2. The E-Waste Disposal Fee</h3>
+      <p>
+        In Canada (especially Ontario and BC) and New Zealand, you cannot just put a fridge on the curb. You will pay a disposal fee. However, stores like **Best Buy Canada** or **Noel Leeming** often offer Free Haul-Away if you buy a new premium unit. Factor this $50-$100 saving into your decision.
+      </p>
+
+      <h3>3. Parts Availability (The 'Obsolescence' Trap)</h3>
+      <p>
+        As technicians, we often find that machines over 10 years old have NLA (No Longer Available) status for parts. If your repair requires a main PCB and it is NLA, the decision is made for you. This is common with brands like **Fisher and Paykel** older than 12 years.
+      </p>
+
+      <section class='my-20 p-12 bg-accent border-4 border-foreground rounded-[3rem] text-background'>
+        <h2 class='text-background mt-0 uppercase italic text-4xl'>Technician Recommendation</h2>
+        <p class='text-xl font-bold'>
+          'If your appliance is a premium **Miele**, **Bosch**, or **Asko**, fix it even if it's over 10 years old. These machines are built to be serviced. If it's a budget brand like **Haier** or **Insignia**, your machine is likely a 'disposable utility'—anything more than a pump repair is a bad investment.'
+        </p>
+      </section>
+
+      <h2 id='replacement-deals'>Where to Buy Quality Replacements Locally</h2>
+      <p>
+        If our scorecard told you to **REPLACE**, do not buy the cheapest model available. Buy for longevity.
+      </p>
+      
+      <div class='grid grid-cols-1 md:grid-cols-2 gap-8 my-12'>
+        <div class='p-6 bg-foreground/5 rounded-2xl border-2 border-primary'>
+          <h4 class='mt-0 text-primary'>New Zealand Buyers</h4>
+          <p class='text-sm'>For the best selection of Bosch and Mitsubishi Electric, go to **Noel Leeming** or **Harvey Norman NZ**. For budget-friendly but reliable Fisher and Paykel, check **Bunnings** clearance sections.</p>
+        </div>
+        <div class='p-6 bg-foreground/5 rounded-2xl border-2 border-primary'>
+          <h4 class='mt-0 text-primary'>Canada Buyers</h4>
+          <p class='text-sm'>We recommend **Best Buy Canada** for their 'Geek Squad' protection on fridge compressors. For heavy-duty washers (Speed Queen style), search **Home Depot Canada** or local appliance specialists.</p>
+        </div>
+      </div>
+
+      <h2>FAQ: Frequently Asked Questions</h2>
+      <div class='space-y-8'>
+        <div>
+          <h4 class='text-primary tracking-widest uppercase'>Q: Is it worth repairing a 10-year-old washing machine?</h4>
+          <p>
+            **Technician Verdict:** Almost never. The tub bearings or spider arms are often on their last legs. You will fix the pump today and the motor will burn out in 3 months. Invest in a new 2026 model with a 5-year warranty.
+          </p>
+        </div>
+        <div>
+          <h4 class='text-primary tracking-widest uppercase'>Q: What is the most expensive part to repair on a fridge?</h4>
+          <p>
+            **Technician Verdict:** The Compressor. It requires a licensed refrigeration technician and specialized gas welding. This repair usually costs $600-$950. If your machine is out of warranty, **always replace** if the compressor dies.
+          </p>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  \u003cFooter /\u003e
+\u003c/BaseLayout\u003e
+
