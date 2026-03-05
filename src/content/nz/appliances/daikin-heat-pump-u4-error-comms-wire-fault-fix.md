@@ -10,13 +10,13 @@ tags: ['Daikin', 'Heat Pump', 'U4 Error', 'Communication Fault', 'Comms Wire', '
 instantAnswer: 'A Daikin U4 error code means the indoor head unit cannot communicate with the heavy outdoor compressor. 1. Turn off the heat pump at the wall for 5 minutes, then turn it back on. This resets the internal digital handshake. 2. If U4 returns immediately, the "Comms Wire" (specifically Cable #3 running between the inside and outside units) is severed, corroded, or picking up electrical interference. A technician must test the DC voltage on Wire 3; if the wire is intact, the outdoor PCB (motherboard) has failed.'
 faqs:
   - question: 'What does U4 actually stand for?'
-    answer: 'In Daikin diagnostic terminology, U4 stands for "Transmission Error between Indoor and Outdoor Unit." The two units act like two computers talking over a network cable. If that cable is cut by a rat, severed by a weedwhacker, or incorrectly grounded by a sloppy installer, the indoor unit panics, shuts off the compressor, and throws the U4 code.'
+    answer: 'In Daikin diagnostic terminology, U4 stands for Transmission Error between Indoor and Outdoor Unit. The two units act like two computers talking over a network cable. If that cable is cut by a rat, severed by a weedwhacker, or incorrectly grounded by a sloppy installer, the indoor unit panics, shuts off the compressor, and throws the U4 code.'
   - question: 'Can I just reset the remote to fix it?'
     answer: 'Usually no. While a hard reboot (turning off the main circuit breaker for 5 minutes) can sometimes clear a temporary software glitch caused by a power surge, a persistent U4 error is almost always a physical hardware failure. The wire is literally broken, or the circuit board receiving the signal is dead.'
   - question: 'Why did my new heat pump suddenly get a U4 error after raining?'
     answer: 'This implies water ingress. If your installer used cheap wire nuts or electrical tape to splice two pieces of communication wire together outside, rainwater has seeped into the splice. The water shorts the 16-volt DC communication signal to ground, instantly causing a U4 transmission failure. Comms wires should never be spliced.'
   - question: 'How much does it cost to fix a U4 error in New Zealand?'
-    answer: 'If it is just a chewed wire under your house, an HVAC technician can run a new length of 4-core stranded wire for about $150–$250. However, if the electrical surge that caused the U4 error actually fried the outdoor PCB (Printed Circuit Board), a replacement motherboard from Daikin New Zealand will cost upwards of $800 to $1,200 installed.'
+    answer: 'If it is just a chewed wire under your house, an HVAC technician can run a new length of 4-core stranded wire for about $150 to $250. However, if the electrical surge that caused the U4 error actually fried the outdoor PCB (Printed Circuit Board), a replacement motherboard from Daikin New Zealand will cost upwards of $800 to $1,200 installed.'
 ---
 
 # Daikin Heat Pump U4 Error: The Comms Wire Trick

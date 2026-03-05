@@ -9,14 +9,14 @@ image: '/images/can-telecom/shaw-go-wifi-passpoint-not-connecting.png'
 tags: ['Shaw Go WiFi', 'Rogers Passpoint', 'iPhone iOS 18', 'Public Wi-Fi', 'Network Profile', 'Canada Tech']
 instantAnswer: 'If your iPhone running iOS 18 refuses to connect to a Shaw Go WiFi or ShawPasspoint hotspot in 2026, the issue is Apple’s new "Private Wi-Fi Address" security feature. iOS 18 randomly changes your phone’s MAC address to prevent tracking. Because Shaw/Rogers authenticates devices using fixed MAC addresses, the network rejects your phone as an unknown device. Go to Settings > Wi-Fi, tap the "i" next to the Shaw network, and toggle "Private Wi-Fi Address" to OFF. Then, force your phone to reconnect.'
 faqs:
-  - question: 'Did Rogers shut down Shaw Go WiFi?'
-    answer: 'Yes and no. After the massive 2023 merger, Rogers began aggressively retiring the legacy "Shaw Go WiFi" and "ShawPasspoint" network names (SSIDs). In 2026, the infrastructure remains, but the networks have been universally rebranded to "Rogers WiFi Hotspots." If your phone is still looking for the word "Shaw," it will fail to connect.'
-  - question: 'Why does my iPhone say "Unable to Join Network"?'
-    answer: 'This happens when the security certificate installed on your iPhone expires, or the backend Rogers authorization server rejects your device limit. Most basic internet plans only allow 3 to 6 registered devices. If you bought a new iPhone but forgot to remove your old iPhone from your Rogers account, the server blocks the new connection.'
-  - question: 'Is it safe to turn off Private Wi-Fi Address?'
-    answer: 'Turning off Private Address means the coffee shop router can see your phone’s true physical hardware number (MAC address). While this slightly reduces your absolute anonymity, it is 100% required to use heavily authenticated telecom networks like Rogers Passpoint.'
-  - question: 'How do I install the new Rogers Passpoint profile?'
-    answer: 'You must connect to the open, unencrypted "RogersWiFi" network first. Open Safari, and a login captive portal will appear. Once you sign in with your MyRogers credentials, the portal will prompt you to download a new Apple Configuration Profile which formally installs the secure Passpoint certificate.'
+  - question: "Did Rogers shut down Shaw Go WiFi?"
+    answer: "Yes and no. After the massive 2023 merger, Rogers began aggressively retiring the legacy Shaw Go WiFi and ShawPasspoint network names (SSIDs). In 2026, the infrastructure remains, but the networks have been universally rebranded to Rogers WiFi Hotspots. If your phone is still looking for the word Shaw, it will fail to connect."
+  - question: "Why does my iPhone say Unable to Join Network?"
+    answer: "This happens when the security certificate installed on your iPhone expires, or the backend Rogers authorization server rejects your device limit. Most basic internet plans only allow 3 to 6 registered devices. If you bought a new iPhone but forgot to remove your old iPhone from your Rogers account, the server blocks the new connection."
+  - question: "Is it safe to turn off Private Wi-Fi Address?"
+    answer: "Turning off Private Address means the coffee shop router can see your phones true physical hardware number (MAC address). While this slightly reduces your absolute anonymity, it is 100% required to use heavily authenticated telecom networks like Rogers Passpoint."
+  - question: "How do I install the new Rogers Passpoint profile?"
+    answer: "You must connect to the open, unencrypted RogersWiFi network first. Open Safari, and a login captive portal will appear. Once you sign in with your MyRogers credentials, the portal will prompt you to download a new Apple Configuration Profile which formally installs the secure Passpoint certificate."
 ---
 
 # Shaw Go WiFi Not Connecting on iPhone? The iOS 18 Fix

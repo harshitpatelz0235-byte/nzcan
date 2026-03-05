@@ -1,16 +1,16 @@
 ---
 title: 'Fujitsu Ducted System Red/Green Flashing? The Hard Reset Fix'
-description: 'Is your Fujitsu Ducted Heat Pump blowing no air while the wall controller or ceiling receiver flashes Red and Green? Learn how to decode the error and perform a hard master reset.'
+description: 'Is your Fujitsu Ducted Heat Pump blowing no air while the wall controller or ceiling receiver flashes Red and Green? Learn how to perform a hard master reset.'
 category: 'Appliances'
 lastUpdated: 2026-03-05
 country: 'nz'
 author: 'ErrorDocs Tech Team'
 image: '/images/nz-ev/fujitsu-ducted-system-flashing-red-green-fix.png'
 tags: ['Fujitsu', 'General', 'Airstage', 'Ducted Heat Pump', 'Flashing Lights', 'Red Green', 'NZ Tech']
-instantAnswer: 'Flashing Red and Green lights on a Fujitsu (General/Airstage) ducted system indicate a diagnostic fault code. Before calling a technician, you must perform a Hard Capacity Reset to clear false brownout surges. 1. Go to your outdoor compressor unit. 2. Locate the heavy-duty white "Isolator" switch mounted to the wall beside it. 3. Turn it OFF. 4. Wait exactly 5 minutes for the indoor and outdoor motherboards to completely drain their capacitors. 5. Turn it back ON. If the flashing immediately returns, you must count the exact sequence of red and green flashes to identify the broken hardware part.'
+instantAnswer: 'Flashing Red and Green lights on a Fujitsu (General/Airstage) ducted system indicate a diagnostic fault code. Before calling a technician, you must perform a Hard Capacity Reset to clear false brownout surges. 1. Go to your outdoor compressor unit. 2. Locate the heavy-duty white Isolator switch mounted to the wall beside it. 3. Turn it OFF. 4. Wait exactly 5 minutes for the motherboards to completely drain their capacitors. 5. Turn it back ON. If the flashing immediately returns, you must count the exact sequence of red and green flashes to identify the broken hardware part.'
 faqs:
   - question: 'What does 2 Red Flashes and 2 Green Flashes mean?'
-    answer: 'This specific sequence (2 Red, 2 Green) almost always indicates a failure of the "Indoor Air Temperature Sensor" located inside the ceiling unit. If a rat has chewed the delicate sensor wire in your roof space, or if the sensor simply died, the system board panics and shuts down to prevent freezing or overheating the ductwork.'
+    answer: 'This specific sequence (2 Red, 2 Green) almost always indicates a failure of the Indoor Air Temperature Sensor located inside the ceiling unit. If a rat has chewed the delicate sensor wire in your roof space, or if the sensor simply died, the system board panics and shuts down to prevent freezing or overheating the ductwork.'
   - question: 'Can I just reset it from the wall controller?'
     answer: 'If your wall controller has an "E:XX" error code on the screen, pressing the Master Reset or ACL button with a paperclip will reboot the remote, but it will not reboot the massive heavy-duty motherboard in the ceiling. You must cut the 230V AC mains power at the outdoor isolator switch to perform a true hardware reset.'
   - question: 'Why does it only flash when I turn on Heating?'

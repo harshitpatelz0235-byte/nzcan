@@ -10,13 +10,13 @@ tags: ['Fisher & Paykel', 'WashSmart', 'Washing Machine', 'Code 43', 'Out of Bal
 instantAnswer: 'If your Fisher & Paykel top loader repeatedly throws an "Out of Balance" Code 43 during the spin cycle, the internal suspension rods have failed. The heavy wash tub hangs from four metal rods containing small shock-absorbing springs. After roughly 5 to 7 years of use in New Zealand homes, these springs lose their tension. You cannot fix this with software. You must purchase a genuine F&P 4-pack Suspension Kit (approx. $120 NZD) and physically replace the four rods holding the tub.'
 faqs:
   - question: 'What does Err 43 actually mean on an F&P washer?'
-    answer: 'Code 43 is the specific diagnostic code the Fisher & Paykel motherboard throws when the internal tub oscillating sensor detects violent, uncontrollable shaking. The machine immediately aborts the high-speed spin cycle, fills the tub with water to try and "float" the clothes into a better position, and tries again. If it fails 3 times, it locks out and displays Err 43.'
+    answer: 'Code 43 is the specific diagnostic code the Fisher & Paykel motherboard throws when the internal tub oscillating sensor detects violent, uncontrollable shaking. The machine immediately aborts the high-speed spin cycle, fills the tub with water to try and float the clothes into a better position, and tries again. If it fails 3 times, it locks out and displays Err 43.'
   - question: 'Could it just be a bundled up bedsheet?'
     answer: 'Yes. If Code 43 only happens once every few months when you wash heavy duvet covers or bath towels, the machine is behaving perfectly. It is protecting itself from ripping apart. However, if you get an Out of Balance error while washing three loose t-shirts, your suspension springs are mathematically dead.'
   - question: 'Can I replace just one broken suspension rod?'
     answer: 'No. Just like the shock absorbers on a car, washing machine suspension rods degrade evenly over time. If you replace only the front-left rod, the new tight spring will violently clash with the three old, saggy springs, making the vibration significantly worse. You must always replace them as a complete set of four.'
   - question: 'Where can I buy the exact F&P Suspension Kit in NZ?'
-    answer: 'Do not buy generic unbranded rods from international marketplaces; they use inferior steel that sags within a year. Buy the official "Fisher & Paykel Suspension Kit Assembly - 424569P" from genuine local stockists like Steve’s Appliance Spares or directly from the F&P Parts website. Check your specific model number (e.g., WA8560G1) to ensure the rods are the correct length.'
+    answer: 'Do not buy generic unbranded rods from international marketplaces; they use inferior steel that sags within a year. Buy the official Fisher & Paykel Suspension Kit Assembly - 424569P from genuine local stockists like Steves Appliance Spares or directly from the F&P Parts website. Check your specific model number (e.g., WA8560G1) to ensure the rods are the correct length.'
 ---
 
 # F&P WashSmart Out of Balance (Code 43): The Fix

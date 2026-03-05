@@ -10,13 +10,13 @@ tags: ['Videotron', 'Helix FiGateway', 'Flashing Green', 'Montreal Tech', 'App S
 instantAnswer: 'A flashing green light on a Videotron Helix Fi Gateway means the modem is struggling with "Upstream Synchronization." It is trying to talk back to the Videotron central servers but failing. If you are setting it up for the first time, do not trust the Helix Fi App. Unplug the coax cable, flip the metal wire inside to ensure it is perfectly straight, and screw it down with a wrench (finger-tight is not enough). Then, wait exactly 20 minutes, as the modem often performs a silent firmware update while flashing green before it allows activation.'
 faqs:
   - question: 'What does a solid white light mean on Helix Fi?'
-    - answer: 'A solid white light is exactly what you want to see. It means the gateway is fully activated, the firmware is up to date, and the Wi-Fi network is actively broadcasting internet to your devices.'
-  - question: 'Can I use any coaxial outlet in my apartment?'
-    answer: 'No. Often, previous tenants or homeowners will disconnect secondary bedroom coaxial cables in the basement splitter box to improve signal strength in the living room. If the green light never stops flashing, the wall outlet you are using is likely physically disconnected inside your walls. Move the modem to the main living room outlet.'
-  - question: 'Why does the Helix Fi app say "Gateway Not Found"?'
-    answer: 'The Helix app requires your smartphone to have Bluetooth enabled and location services turned on during the initial pairing process. If the gateway is flashing green, the app will often time out. You must wait for the modem hardware to finish booting before the app can detect it.'
-  - question: 'Is the Helix Fi Gateway the same as Comcast xFi?'
-    answer: 'Yes. Videotron (like Rogers in Canada) licenses the X1/xFi hardware and software stack directly from Comcast in the United States. The physical hardware is identical to the Comcast XB6/XB7 gateways, it simply runs customized French/English Videotron firmware.'
+    answer: 'A solid white indicator light is exactly what you want. It means the gateway is fully online, actively communicating with the Videotron coaxial network, and successfully broadcasting Wi-Fi to your home.'
+  - question: 'Can I use any coaxial cable for the gateway?'
+    answer: 'No. Often, previous tenants leave cheap, unshielded coaxial cables bought from a hardware store. These "dollar store" cables act like antennas, pulling in radio interference that corrupts the DOCSIS 3.1 signal and causes the gateway to flash green. Always use the thick, shielded coaxial cable provided in the Videotron installation box.'
+  - question: 'Why does my Helix app say the gateway is offline?'
+    answer: 'If the light on the physical box is solid white, but the Helix app says it is offline, the app data is out of sync with your account. Force close the Helix app on your phone, clear the cache, and log back in. If you recently replaced your gateway, the old gateway’s serial number might still be tied to your app profile.'
+  - question: 'Does a flashing green light mean downloading an update?'
+    answer: 'No. A firmware update usually presents as a flashing amber/orange light, or an alternating sequence. A rapid flashing green light purely signifies that the modem is shouting down the coaxial line but is receiving no valid return signal from the street node.'
 ---
 
 # Videotron Helix Fi Gateway Flashing Green? The App Setup Bug

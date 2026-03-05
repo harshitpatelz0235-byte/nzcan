@@ -12,9 +12,9 @@ faqs:
   - question: 'What does a fast-flashing orange light mean?'
     answer: 'A rapidly flashing orange/yellow light specifically indicates the battery is actively establishing communications with the IQ Gateway. This often happens right after a major grid power outage in New Zealand, when the entire house re-powers simultaneously and the battery boots up faster than the local Wi-Fi router, causing a temporary desync.'
   - question: 'What does a slow-flashing orange light mean?'
-    answer: 'A slowly pulsing orange light indicates the battery has entered "Sleep Mode." This typically occurs if the battery drained itself completely to 0% during an extended blackout, or if the IQ Gateway actively commanded it to sleep to preserve the last remaining drop of emergency reserve power.'
-  - question: 'Why does my Enphase App say "Battery Not Reporting"?'
-    answer: 'The batteries communicate using a proprietary 2.4GHz wireless Zigbee signal (on older 10T models) or wired CAN bus (on newer 5P models). If your home Wi-Fi is working perfectly, but the app says "Not Reporting," the internal Zigbee USB stick inside your IQ Gateway box has likely crashed. Restarting the Gateway usually re-initializes the USB stick.'
+    answer: 'A slowly pulsing orange light indicates the battery has entered Sleep Mode. This typically occurs if the battery drained itself completely to 0% during an extended blackout, or if the IQ Gateway actively commanded it to sleep to preserve the last remaining drop of emergency reserve power.'
+  - question: 'Why does my Enphase App say Battery Not Reporting?'
+    answer: 'The batteries communicate using a proprietary 2.4GHz wireless Zigbee signal (on older 10T models) or wired CAN bus (on newer 5P models). If your home Wi-Fi is working perfectly, but the app says Not Reporting, the internal Zigbee USB stick inside your IQ Gateway box has likely crashed. Restarting the Gateway usually re-initializes the USB stick.'
   - question: 'Should I flip the DC switch on the battery itself?'
     answer: 'Only as an absolute last resort. If restarting the IQ Gateway circuit breaker does not work after 30 minutes, you can physically turn the rotary DC switch on the side of the IQ Battery to the OFF position, wait 5 minutes, and turn it back on. However, if the battery is actively trying to update its firmware, cutting the DC power can brick the unit.'
 ---

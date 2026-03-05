@@ -14,7 +14,7 @@ faqs:
   - question: 'What if "Please Wait" is flashing aggressively?'
     answer: 'A flashing "Wait" message is more serious than a solid one. It usually indicates that the indoor unit is receiving power, but it cannot establish a connection with the massive outdoor compressor. If a 3-minute hard breaker reset does not clear a flashing message, the communication wire outside is likely damaged or the outdoor motherboard has failed.'
   - question: 'Does pressing the hidden reset button on the remote work?'
-    answer: 'Sometimes. If you slide the remote cover down, you will see a tiny pinhole labeled "Reset." Pressing this with a paperclip wipes the remote’s memory. While this fixes a frozen remote screen, it does not fix a frozen heat pump motherboard. You must perform the cold boot at the switchboard to fix the actual appliance.'
+    answer: 'Sometimes. If you slide the remote cover down, you will see a tiny pinhole labeled "Reset." Pressing this with a paperclip wipes the remotes memory. While this fixes a frozen remote screen, it does not fix a frozen heat pump motherboard. You must perform the cold boot at the switchboard to fix the actual appliance.'
   - question: 'My remote screen is totally blank. Is it also broken?'
     answer: 'No, your batteries are dead. Mitsubishi remotes use active LCD screens that drain AAA batteries even when the heat pump is turned off. Replace the batteries with high-quality alkalines (like Energizer or Duracell). Cheap zinc-carbon batteries often lack the voltage required to transmit a strong infrared signal to the wall unit.'
 ---

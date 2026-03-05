@@ -11,6 +11,10 @@ instantAnswer: 'An F7 (or A3) error on a Fisher & Paykel oven means the internal
 faqs:
   - question: 'Why does the oven lock the door in the first place?'
     answer: 'During a Pyrolytic self-clean cycle, the Fisher & Paykel oven intentionally heats itself to over 450°C (840°F) to incinerate grease and baked-on food into white ash. Opening a door at this temperature would cause severe, life-altering burns and instantly ignite your kitchen cabinets. The motorized safety lock engages at 250°C and is engineered not to release until the oven cools back down.'
+  - question: 'What is Pyrolytic cleaning anyway?'
+    answer: 'Pyrolytic self-cleaning is a feature on premium Fisher & Paykel ovens where the internal cavity is heated to roughly 450°C (840°F) to burn baked-on grease and food spills into a fine white ash. Because these temperatures are lethally hot, the oven features a motorized steel deadbolt that locks the door shut until the cycle finishes and the internal temperature drops below 200°C.'
+  - question: 'It physically will not open, should I force it?'
+    answer: 'Absolutely not. The locking mechanism on an F&P oven is a motorized steel hook. If you wedge a screwdriver into the top of the door and pry it open, you will shatter the $300 glass door and permanently bend the $150 lock assembly. You must clear the F7 software error to tell the motor to retract the hook.'
   - question: 'The oven is completely cold, but still locked with F7. Why?'
     answer: 'This implies the temperature sensor (thermistor) inside the oven cavity has failed, or the motorized locking latch at the top of the door has mechanically stripped its gears. The oven thinks it is still 400°C inside, or the motor physically cannot pull the metal locking pin back. If a 5-minute breaker reset does not fix it, the lock assembly must be replaced.'
   - question: 'Can I use a coat hanger to pick the lock?'
