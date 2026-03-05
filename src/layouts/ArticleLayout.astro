@@ -79,8 +79,8 @@ const schema = JSON.stringify({
 
 			{/* Quick Action Bar */}
 			<div class="flex gap-4 mb-12">
-				<button class="px-6 py-3 bg-primary text-white font-black uppercase text-xs tracking-widest rounded-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">Print Fix</button>
-				<button class="px-6 py-3 border border-foreground/10 font-black uppercase text-xs tracking-widest rounded-lg hover:bg-foreground hover:text-background transition-all">Copy Link</button>
+				<button onclick="window.print()" class="px-6 py-3 bg-primary text-white font-black uppercase text-xs tracking-widest rounded-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all cursor-pointer">Print Fix</button>
+				<button onclick="navigator.clipboard.writeText(window.location.href); const btn = this; const originalText = btn.innerText; btn.innerText = 'COPIED!'; setTimeout(() => btn.innerText = originalText, 2000)" class="px-6 py-3 border border-foreground/10 font-black uppercase text-xs tracking-widest rounded-lg hover:bg-foreground hover:text-background transition-all cursor-pointer">Copy Link</button>
 			</div>
 
 			{/* Safety Alert */}
@@ -134,6 +134,41 @@ const schema = JSON.stringify({
 
 	<Footer />
 </BaseLayout>
+
+<style is:global>
+	/* Enhanced Readability Spacing */
+	.prose h2 {
+		margin-top: 3.5rem !important;
+		margin-bottom: 1.5rem !important;
+	}
+	.prose h3 {
+		margin-top: 2.5rem !important;
+		margin-bottom: 1rem !important;
+	}
+	.prose p {
+		margin-bottom: 2rem !important;
+		line-height: 1.8 !important;
+		font-size: 1.125rem !important;
+	}
+	.prose li {
+		margin-bottom: 1.25rem !important;
+		line-height: 1.7 !important;
+	}
+	.prose p > strong:first-child, 
+	.prose li > strong:first-child {
+		display: block;
+		margin-bottom: 0.5rem;
+		margin-top: 1rem;
+		color: hsl(var(--primary)) !important;
+		font-size: 1.05em;
+	}
+	.prose li > strong:first-child {
+		margin-top: 0.5rem;
+	}
+	.prose ul, .prose ol {
+		margin-bottom: 2.5rem !important;
+	}
+</style>
 
 <script is:inline>
 	document.addEventListener('scroll', () => {
