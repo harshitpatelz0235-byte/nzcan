@@ -112,6 +112,36 @@ const API_CATALOG = [
     shortDesc: "Real-time exchange rates and currency conversion",
     method: "GET",
     endpoint: "/v1/finance/convert"
+  },
+  {
+    id: 51,
+    name: "Email Validator",
+    slug: "email-validator",
+    category: "dev-tools",
+    icon: "✉️",
+    shortDesc: "Validate email addresses and detect disposable domains",
+    method: "POST",
+    endpoint: "/v1/dev/email-validate"
+  },
+  {
+    id: 31,
+    name: "Website Screenshot API",
+    slug: "website-screenshot",
+    category: "web-scraping",
+    icon: "📸",
+    shortDesc: "Generate high-resolution screenshots of any URL",
+    method: "POST",
+    endpoint: "/v1/web/screenshot"
+  },
+  {
+    id: 22,
+    name: "Resume/CV Parser",
+    slug: "resume-parser",
+    category: "document-file",
+    icon: "👔",
+    shortDesc: "Extract structured data from PDF/DOCX resumes instantly",
+    method: "POST",
+    endpoint: "/v1/document/parse-resume"
   }
 ];
 

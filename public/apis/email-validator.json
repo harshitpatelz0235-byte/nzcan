@@ -1,0 +1,57 @@
+{
+  "id": 51,
+  "name": "Email Validator",
+  "slug": "email-validator",
+  "category": "dev-tools",
+  "categoryName": "Developer Tools",
+  "icon": "✉️",
+  "color": "#3b82f6",
+  "description": "Comprehensive email validation API that checks syntax, MX records, SMTP servers, and detects disposable or role-based email addresses in real-time.",
+  "shortDesc": "Validate email addresses and detect disposable domains",
+  "method": "POST",
+  "endpoint": "/v1/dev/email-validate",
+  "baseUrl": "https://api.apivault.dev",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-API-Key": "your_api_key_here"
+  },
+  "params": [
+    { "name": "email", "type": "string", "required": true, "desc": "The email address to validate" },
+    { "name": "check_smtp", "type": "boolean", "required": false, "desc": "Perform an active SMTP check. Default: true" }
+  ],
+  "responseExample": {
+    "success": true,
+    "data": {
+      "email": "user@example.com",
+      "is_valid": true,
+      "score": 0.95,
+      "reasons": [],
+      "details": {
+        "syntax_valid": true,
+        "mx_found": true,
+        "smtp_check": true,
+        "is_disposable": false,
+        "is_role_account": false,
+        "is_free_email": false
+      }
+    }
+  },
+  "useCases": [
+    "User registration cleanup",
+    "Newsletter list scrubbing",
+    "Fraud detection systems",
+    "B2B lead generation verification"
+  ],
+  "howItWorks": [
+    "Submit an email address via POST",
+    "Our system performs a regex syntax check",
+    "We query the domain's DNS to verify MX records",
+    "We ping the SMTP server (without sending an email) to ensure the mailbox exists",
+    "We cross-reference the domain against our database of 50,000+ disposable email providers"
+  ],
+  "rateLimit": {
+    "free": "500 requests/month",
+    "pro": "25,000 requests/month",
+    "enterprise": "Unlimited"
+  }
+}

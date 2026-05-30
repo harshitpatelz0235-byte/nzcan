@@ -1,0 +1,52 @@
+{
+  "id": 31,
+  "name": "Website Screenshot API",
+  "slug": "website-screenshot",
+  "category": "web-scraping",
+  "categoryName": "Web & Scraping",
+  "icon": "📸",
+  "color": "#0ea5e9",
+  "description": "Capture high-quality, full-page or viewport screenshots of any public URL. Supports custom viewports, device emulation (mobile/desktop), and delayed rendering for SPAs.",
+  "shortDesc": "Generate high-resolution screenshots of any URL",
+  "method": "POST",
+  "endpoint": "/v1/web/screenshot",
+  "baseUrl": "https://api.apivault.dev",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-API-Key": "your_api_key_here"
+  },
+  "params": [
+    { "name": "url", "type": "string", "required": true, "desc": "The target website URL" },
+    { "name": "full_page", "type": "boolean", "required": false, "desc": "Capture the entire scrolling page. Default: false" },
+    { "name": "viewport", "type": "string", "required": false, "desc": "e.g., '1920x1080' or 'mobile'. Default: '1280x800'" },
+    { "name": "delay", "type": "number", "required": false, "desc": "Time to wait before capturing (ms). Max: 10000" }
+  ],
+  "responseExample": {
+    "success": true,
+    "data": {
+      "screenshot_url": "https://cdn.apivault.dev/results/screenshot-abc123xyz.png",
+      "format": "png",
+      "dimensions": { "width": 1920, "height": 3450 },
+      "expires_in": "24 hours"
+    }
+  },
+  "useCases": [
+    "SEO dashboard thumbnails",
+    "Visual regression testing",
+    "Competitor tracking tools",
+    "Web directory listings",
+    "Archive generation"
+  ],
+  "howItWorks": [
+    "Send a target URL with your desired viewport settings",
+    "Our headless Chrome fleet navigates to the URL",
+    "The system waits for network idle and custom delays (for React/Vue apps to render)",
+    "A high-res screenshot is captured and uploaded to our CDN",
+    "You receive a secure URL to download or embed the image"
+  ],
+  "rateLimit": {
+    "free": "100 requests/month",
+    "pro": "5,000 requests/month",
+    "enterprise": "Unlimited"
+  }
+}

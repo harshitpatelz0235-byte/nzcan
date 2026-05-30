@@ -1,0 +1,67 @@
+{
+  "id": 22,
+  "name": "Resume/CV Parser",
+  "slug": "resume-parser",
+  "category": "document-file",
+  "categoryName": "Document & File",
+  "icon": "👔",
+  "color": "#f59e0b",
+  "description": "Extract structured data from unstructured PDF or DOCX resumes using advanced AI. Automatically parses names, contact info, work experience, education, and skills into clean JSON.",
+  "shortDesc": "Extract structured data from PDF/DOCX resumes instantly",
+  "method": "POST",
+  "endpoint": "/v1/document/parse-resume",
+  "baseUrl": "https://api.apivault.dev",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-API-Key": "your_api_key_here"
+  },
+  "params": [
+    { "name": "file_url", "type": "string", "required": true, "desc": "URL of the PDF or DOCX file (or use base64 in 'file_base64')" }
+  ],
+  "responseExample": {
+    "success": true,
+    "data": {
+      "personal_info": {
+        "name": "Jane Doe",
+        "email": "jane.doe@example.com",
+        "phone": "+1-555-0198",
+        "location": "San Francisco, CA"
+      },
+      "skills": ["JavaScript", "Python", "React", "Machine Learning"],
+      "experience": [
+        {
+          "company": "Tech Corp",
+          "title": "Senior Engineer",
+          "start_date": "2020-01",
+          "end_date": "Present",
+          "description": "Led the backend team..."
+        }
+      ],
+      "education": [
+        {
+          "institution": "State University",
+          "degree": "B.S. Computer Science",
+          "year": "2019"
+        }
+      ]
+    }
+  },
+  "useCases": [
+    "Applicant Tracking Systems (ATS)",
+    "HR recruitment platforms",
+    "Freelance marketplace onboarding",
+    "Automated candidate screening"
+  ],
+  "howItWorks": [
+    "Provide a URL to a PDF or DOCX resume",
+    "Our OCR engine extracts all raw text and layout metadata",
+    "A fine-tuned NLP model identifies entities (names, dates, companies, skills)",
+    "The unstructured text is mapped to a strict, standardized JSON schema",
+    "You receive the structured data ready for your database"
+  ],
+  "rateLimit": {
+    "free": "50 requests/month",
+    "pro": "2,500 requests/month",
+    "enterprise": "Unlimited"
+  }
+}
