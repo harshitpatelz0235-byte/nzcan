@@ -16,6 +16,13 @@
   function navigateTo(page, data) {
     currentPage = page;
     window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Close mobile menu if open
+    const navLinks = document.getElementById("nav-links");
+    if (navLinks && navLinks.classList.contains("open")) {
+      navLinks.classList.remove("open");
+    }
+
     render(data);
     updateNavLinks();
   }
@@ -806,7 +813,7 @@ print(response.json())`;
     });
   }
 
-  // ---- Navbar Scroll ----
+  // ---- Navbar Scroll & Mobile Menu ----
   function initNavbar() {
     const nav = document.querySelector(".navbar");
     window.addEventListener("scroll", () => {
