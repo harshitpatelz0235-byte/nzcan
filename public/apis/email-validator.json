@@ -10,7 +10,7 @@
   "shortDesc": "Validate email addresses and detect disposable domains",
   "method": "POST",
   "endpoint": "/v1/dev/email-validate",
-  "baseUrl": "https://api.apivault.dev",
+  "baseUrl": "https://errordocs.com",
   "headers": {
     "Content-Type": "application/json",
     "X-API-Key": "your_api_key_here"

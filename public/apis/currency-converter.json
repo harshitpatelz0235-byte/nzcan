@@ -10,7 +10,7 @@
   "shortDesc": "Real-time exchange rates and currency conversion",
   "method": "GET",
   "endpoint": "/v1/finance/convert",
-  "baseUrl": "https://api.apivault.dev",
+  "baseUrl": "https://errordocs.com",
   "headers": {
     "X-API-Key": "your_api_key_here"
   },

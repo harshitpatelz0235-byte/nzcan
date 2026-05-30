@@ -10,7 +10,7 @@
   "shortDesc": "Extract structured data from PDF/DOCX resumes instantly",
   "method": "POST",
   "endpoint": "/v1/document/parse-resume",
-  "baseUrl": "https://api.apivault.dev",
+  "baseUrl": "https://errordocs.com",
   "headers": {
     "Content-Type": "application/json",
     "X-API-Key": "your_api_key_here"

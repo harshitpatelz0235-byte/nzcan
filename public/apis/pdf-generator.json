@@ -10,7 +10,7 @@
   "shortDesc": "Convert HTML and URLs to high-quality PDF documents",
   "method": "POST",
   "endpoint": "/v1/document/pdf",
-  "baseUrl": "https://api.apivault.dev",
+  "baseUrl": "https://errordocs.com",
   "headers": {
     "Content-Type": "application/json",
     "X-API-Key": "your_api_key_here"

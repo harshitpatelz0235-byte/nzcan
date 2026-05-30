@@ -10,7 +10,7 @@
   "shortDesc": "Generate high-resolution screenshots of any URL",
   "method": "POST",
   "endpoint": "/v1/web/screenshot",
-  "baseUrl": "https://api.apivault.dev",
+  "baseUrl": "https://errordocs.com",
   "headers": {
     "Content-Type": "application/json",
     "X-API-Key": "your_api_key_here"
