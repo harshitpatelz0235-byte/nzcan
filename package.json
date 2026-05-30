@@ -1,0 +1,8 @@
+{
+  "name": "errordocs",
+  "version": "1.0.0",
+  "description": "Errordocs API Marketplace",
+  "scripts": {
+    "build": "echo 'No build step required for this static site!'"
+  }
+}
