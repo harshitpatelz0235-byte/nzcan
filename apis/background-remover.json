@@ -1,0 +1,51 @@
+{
+  "id": 11,
+  "name": "Background Remover",
+  "slug": "background-remover",
+  "category": "image-vision",
+  "categoryName": "Image & Vision",
+  "icon": "✂️",
+  "color": "#ec4899",
+  "description": "Automatically and accurately remove the background from any image using advanced computer vision. Perfect for e-commerce product photos, profile pictures, and graphic design tools.",
+  "shortDesc": "Remove backgrounds from images instantly with AI",
+  "method": "POST",
+  "endpoint": "/v1/image/remove-background",
+  "baseUrl": "https://api.apivault.dev",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-API-Key": "your_api_key_here"
+  },
+  "params": [
+    { "name": "image_url", "type": "string", "required": true, "desc": "URL of the image to process (or use base64 in 'image_base64' param)" },
+    { "name": "format", "type": "string", "required": false, "desc": "Output format: 'png' (default, transparent) or 'jpg' (white background)" },
+    { "name": "quality", "type": "string", "required": false, "desc": "Output quality: 'standard' or 'hd'" }
+  ],
+  "responseExample": {
+    "success": true,
+    "data": {
+      "result_url": "https://cdn.apivault.dev/results/bg-removed-abc123xyz.png",
+      "format": "png",
+      "original_size": { "width": 800, "height": 600 },
+      "credits_remaining": 995
+    }
+  },
+  "useCases": [
+    "E-commerce product catalogs",
+    "User profile picture uploads",
+    "Graphic design applications",
+    "ID photo generators",
+    "Automated marketing asset creation"
+  ],
+  "howItWorks": [
+    "Provide an image URL or base64 encoded string",
+    "Our Vision AI detects the main subject(s) in the foreground",
+    "A precise mask is generated around the subject",
+    "The background is removed (replaced with transparency)",
+    "A temporary URL containing the result is returned"
+  ],
+  "rateLimit": {
+    "free": "50 requests/month",
+    "pro": "5,000 requests/month",
+    "enterprise": "Unlimited"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": 1,
+  "name": "Text Summarizer",
+  "slug": "text-summarizer",
+  "category": "text-nlp",
+  "categoryName": "Text & NLP",
+  "icon": "📝",
+  "color": "#6366f1",
+  "description": "Transform lengthy articles, documents, and text content into concise, meaningful summaries using advanced NLP. Get key points, bullet summaries, or paragraph-style condensed versions instantly.",
+  "shortDesc": "Summarize long text into concise key points instantly",
+  "method": "POST",
+  "endpoint": "/v1/text/summarize",
+  "baseUrl": "https://api.apivault.dev",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-API-Key": "your_api_key_here"
+  },
+  "params": [
+    { "name": "text", "type": "string", "required": true, "desc": "The text content to summarize (max 10,000 characters)" },
+    { "name": "length", "type": "string", "required": false, "desc": "Summary length: 'short', 'medium', or 'long'. Default: 'medium'" },
+    { "name": "format", "type": "string", "required": false, "desc": "Output format: 'paragraph', 'bullets', or 'key_points'. Default: 'paragraph'" },
+    { "name": "language", "type": "string", "required": false, "desc": "ISO 639-1 language code. Default: auto-detect" }
+  ],
+  "responseExample": {
+    "success": true,
+    "data": {
+      "summary": "The article discusses the impact of artificial intelligence on modern healthcare, highlighting three key areas: diagnostic accuracy improvement by 40%, drug discovery acceleration, and personalized treatment plans.",
+      "key_points": [
+        "AI improves diagnostic accuracy by 40%",
+        "Drug discovery timelines reduced from years to months",
+        "Personalized treatment plans based on patient data",
+        "Cost reduction of 30% in clinical trials"
+      ],
+      "word_count": {
+        "original": 2450,
+        "summary": 67
+      },
+      "compression_ratio": "97.3%",
+      "language": "en"
+    }
+  },
+  "useCases": [
+    "Content aggregation apps",
+    "News digest platforms",
+    "Research paper analysis",
+    "Meeting notes summarization",
+    "Email thread summarizer",
+    "Educational content tools"
+  ],
+  "howItWorks": [
+    "Send your text content via a POST request with your API key",
+    "Our NLP engine analyzes sentence importance and semantic meaning",
+    "Key information is extracted and ranked by relevance",
+    "A coherent summary is generated in your chosen format",
+    "Receive the structured JSON response with summary and metadata"
+  ],
+  "rateLimit": {
+    "free": "100 requests/month",
+    "pro": "10,000 requests/month",
+    "enterprise": "Unlimited"
+  }
+}

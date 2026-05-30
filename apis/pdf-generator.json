@@ -1,0 +1,52 @@
+{
+  "id": 21,
+  "name": "PDF Generator",
+  "slug": "pdf-generator",
+  "category": "document-file",
+  "categoryName": "Document & File",
+  "icon": "📄",
+  "color": "#f43f5e",
+  "description": "Convert HTML, CSS, and URLs into beautiful, print-ready PDF documents. Perfect for generating invoices, receipts, reports, and certificates on the fly.",
+  "shortDesc": "Convert HTML and URLs to high-quality PDF documents",
+  "method": "POST",
+  "endpoint": "/v1/document/pdf",
+  "baseUrl": "https://api.apivault.dev",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-API-Key": "your_api_key_here"
+  },
+  "params": [
+    { "name": "html", "type": "string", "required": false, "desc": "Raw HTML string (use this OR 'url')" },
+    { "name": "url", "type": "string", "required": false, "desc": "Public URL to convert to PDF (use this OR 'html')" },
+    { "name": "format", "type": "string", "required": false, "desc": "Paper format: 'A4', 'Letter', 'Legal', etc. Default: 'A4'" },
+    { "name": "margin", "type": "object", "required": false, "desc": "Margins in px or cm. e.g., {\"top\":\"1cm\",\"bottom\":\"1cm\"}" }
+  ],
+  "responseExample": {
+    "success": true,
+    "data": {
+      "pdf_url": "https://cdn.apivault.dev/results/doc-pdf-xyz789.pdf",
+      "pages": 3,
+      "size_bytes": 245000,
+      "expires_in": "24 hours"
+    }
+  },
+  "useCases": [
+    "Automated invoice generation",
+    "Monthly analytics reports",
+    "Printable ticket/receipt creation",
+    "E-book and whitepaper export",
+    "Certificate generation"
+  ],
+  "howItWorks": [
+    "Send HTML content or a public URL",
+    "Our headless browser engine renders the content perfectly",
+    "CSS rules for print media are applied",
+    "A PDF file is generated and hosted securely",
+    "A download URL is returned (valid for 24 hours)"
+  ],
+  "rateLimit": {
+    "free": "100 requests/month",
+    "pro": "10,000 requests/month",
+    "enterprise": "Unlimited"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": 2,
+  "name": "Sentiment Analysis",
+  "slug": "sentiment-analysis",
+  "category": "text-nlp",
+  "categoryName": "Text & NLP",
+  "icon": "🎭",
+  "color": "#8b5cf6",
+  "description": "Analyze text to determine the emotional tone behind it. Accurately detect positive, negative, and neutral sentiments, along with detailed emotion confidence scores (joy, anger, sadness, fear, surprise).",
+  "shortDesc": "Detect emotions and sentiment in text content instantly",
+  "method": "POST",
+  "endpoint": "/v1/text/sentiment",
+  "baseUrl": "https://api.apivault.dev",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-API-Key": "your_api_key_here"
+  },
+  "params": [
+    { "name": "text", "type": "string", "required": true, "desc": "The text to analyze (max 5,000 characters)" },
+    { "name": "language", "type": "string", "required": false, "desc": "ISO 639-1 language code. Default: auto-detect" }
+  ],
+  "responseExample": {
+    "success": true,
+    "data": {
+      "sentiment": "positive",
+      "score": 0.85,
+      "emotions": {
+        "joy": 0.85,
+        "surprise": 0.10,
+        "neutral": 0.03,
+        "sadness": 0.01,
+        "anger": 0.01
+      },
+      "language": "en"
+    }
+  },
+  "useCases": [
+    "Social media monitoring",
+    "Customer feedback analysis",
+    "Product review analysis",
+    "Brand reputation management",
+    "Support ticket routing"
+  ],
+  "howItWorks": [
+    "Send the text payload via POST request",
+    "Our ML model analyzes the syntax, context, and vocabulary",
+    "The model assigns a general sentiment category (positive, negative, neutral)",
+    "Detailed emotion probability scores are calculated",
+    "Structured JSON data is returned for your application"
+  ],
+  "rateLimit": {
+    "free": "100 requests/month",
+    "pro": "10,000 requests/month",
+    "enterprise": "Unlimited"
+  }
+}

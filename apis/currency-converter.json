@@ -1,0 +1,51 @@
+{
+  "id": 41,
+  "name": "Currency Converter",
+  "slug": "currency-converter",
+  "category": "finance",
+  "categoryName": "Finance & Business",
+  "icon": "💱",
+  "color": "#10b981",
+  "description": "Get real-time exchange rates for 150+ global currencies and cryptocurrencies. Supports historical rates, time-series data, and bulk conversions.",
+  "shortDesc": "Real-time exchange rates and currency conversion",
+  "method": "GET",
+  "endpoint": "/v1/finance/convert",
+  "baseUrl": "https://api.apivault.dev",
+  "headers": {
+    "X-API-Key": "your_api_key_here"
+  },
+  "params": [
+    { "name": "from", "type": "string", "required": true, "desc": "Base currency code (e.g., 'USD')" },
+    { "name": "to", "type": "string", "required": true, "desc": "Target currency code (e.g., 'EUR')" },
+    { "name": "amount", "type": "number", "required": false, "desc": "Amount to convert. Default: 1" }
+  ],
+  "responseExample": {
+    "success": true,
+    "data": {
+      "from": "USD",
+      "to": "EUR",
+      "amount": 100,
+      "result": 92.45,
+      "rate": 0.9245,
+      "timestamp": 1718032400
+    }
+  },
+  "useCases": [
+    "E-commerce multi-currency checkout",
+    "Financial dashboards & apps",
+    "Travel booking platforms",
+    "Accounting & ERP software",
+    "Crypto to fiat calculators"
+  ],
+  "howItWorks": [
+    "Make a GET request with base and target currency codes",
+    "Our system fetches the latest market rate from our liquidity providers",
+    "Calculations are performed instantly",
+    "Response includes the precise exchange rate and converted amount"
+  ],
+  "rateLimit": {
+    "free": "500 requests/month",
+    "pro": "50,000 requests/month",
+    "enterprise": "Unlimited"
+  }
+}
