@@ -142,6 +142,46 @@ const API_CATALOG = [
     shortDesc: "Extract structured data from PDF/DOCX resumes instantly",
     method: "POST",
     endpoint: "/v1/document/parse-resume"
+  },
+  {
+    id: 61,
+    name: "IP Geolocation",
+    slug: "ip-lookup",
+    category: "security",
+    icon: "🔒",
+    shortDesc: "Instantly look up the location, ISP, and timezone of any IP address globally.",
+    method: "GET",
+    endpoint: "/v1/security/ip-lookup"
+  },
+  {
+    id: 71,
+    name: "Global Weather",
+    slug: "weather",
+    category: "data-analytics",
+    icon: "🌤️",
+    shortDesc: "Fetch real-time, highly accurate global weather and forecast data.",
+    method: "GET",
+    endpoint: "/v1/data/weather"
+  },
+  {
+    id: 81,
+    name: "QR Code Generator",
+    slug: "qr-code",
+    category: "media-creative",
+    icon: "📱",
+    shortDesc: "Instantly generate high-quality QR codes for any text, URL, or data payload.",
+    method: "POST",
+    endpoint: "/v1/media/qr-code"
+  },
+  {
+    id: 91,
+    name: "Discord Broadcast",
+    slug: "discord-broadcast",
+    category: "communication",
+    icon: "💬",
+    shortDesc: "Instantly send automated messages and notifications to any Discord channel.",
+    method: "POST",
+    endpoint: "/v1/communication/discord-broadcast"
   }
 ];
 

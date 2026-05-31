@@ -1,0 +1,54 @@
+{
+  "id": "ip-lookup",
+  "name": "IP Geolocation",
+  "category": "security",
+  "categoryName": "Security & Auth",
+  "icon": "🔒",
+  "shortDesc": "Instantly look up the location, ISP, and timezone of any IP address globally.",
+  "description": "The IP Geolocation API provides accurate, real-time location data for any IPv4 or IPv6 address. It returns the country, city, region, latitude, longitude, and ISP details, making it perfect for fraud prevention, targeted content delivery, and traffic analysis.",
+  "method": "GET",
+  "baseUrl": "https://errordocs.com",
+  "endpoint": "/v1/security/ip-lookup",
+  "params": [
+    {
+      "name": "ip",
+      "type": "string",
+      "required": true,
+      "desc": "The IPv4 or IPv6 address to look up (e.g., 8.8.8.8)"
+    }
+  ],
+  "responseExample": {
+    "success": true,
+    "ip": "8.8.8.8",
+    "location": {
+      "country": "United States",
+      "countryCode": "US",
+      "region": "Virginia",
+      "city": "Ashburn",
+      "zip": "20149",
+      "latitude": 39.03,
+      "longitude": -77.5,
+      "timezone": "America/New_York"
+    },
+    "network": {
+      "isp": "Google LLC",
+      "organization": "Google Public DNS",
+      "as": "AS15169 Google LLC"
+    }
+  },
+  "howItWorks": [
+    "You send a GET request containing the IP address to be analyzed.",
+    "Our backend queries global BGP routing tables and geo-databases in real-time.",
+    "The data is enriched with ISP and timezone information and returned."
+  ],
+  "useCases": [
+    "Detecting suspicious login locations",
+    "Displaying localized pricing or content",
+    "Enhancing application analytics dashboards"
+  ],
+  "rateLimit": {
+    "free": "1,000/mo",
+    "pro": "100,000/mo",
+    "enterprise": "Unlimited"
+  }
+}

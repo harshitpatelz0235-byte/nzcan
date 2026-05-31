@@ -1,0 +1,52 @@
+{
+  "id": "discord-broadcast",
+  "name": "Discord Broadcast",
+  "category": "communication",
+  "categoryName": "Communication",
+  "icon": "💬",
+  "shortDesc": "Instantly send automated messages and notifications to any Discord channel.",
+  "description": "The Discord Broadcast API enables seamless integration between your applications and Discord. Provide a webhook URL, and securely dispatch text notifications, alerts, or logs into your community or team channels instantly.",
+  "method": "POST",
+  "baseUrl": "https://errordocs.com",
+  "endpoint": "/v1/communication/discord-broadcast",
+  "params": [
+    {
+      "name": "webhook_url",
+      "type": "string",
+      "required": true,
+      "desc": "Your Discord channel webhook URL."
+    },
+    {
+      "name": "content",
+      "type": "string",
+      "required": true,
+      "desc": "The message text to send to the channel."
+    },
+    {
+      "name": "username",
+      "type": "string",
+      "required": false,
+      "desc": "Override the default webhook bot username."
+    }
+  ],
+  "responseExample": {
+    "success": true,
+    "message": "Message broadcasted to Discord successfully",
+    "delivered_at": "2026-05-30T12:00:00.000Z"
+  },
+  "howItWorks": [
+    "You generate a Webhook URL from your Discord Server settings.",
+    "Send a payload with the URL and your message content to our API.",
+    "We instantly dispatch the message to Discord using optimized server-to-server delivery."
+  ],
+  "useCases": [
+    "Sending system health alerts to DevOps teams",
+    "Announcing new user signups in community channels",
+    "Bridging in-game chat to Discord servers"
+  ],
+  "rateLimit": {
+    "free": "500/mo",
+    "pro": "50,000/mo",
+    "enterprise": "Unlimited"
+  }
+}

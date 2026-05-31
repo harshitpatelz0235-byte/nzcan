@@ -1,0 +1,60 @@
+{
+  "id": "weather",
+  "name": "Global Weather",
+  "category": "data-analytics",
+  "categoryName": "Data & Analytics",
+  "icon": "🌤️",
+  "shortDesc": "Fetch real-time, highly accurate global weather and forecast data.",
+  "description": "The Global Weather API provides instant access to hyper-local, real-time weather conditions anywhere on earth. Powered by top-tier meteorological models, it returns temperature, humidity, wind speeds, and precipitation.",
+  "method": "GET",
+  "baseUrl": "https://errordocs.com",
+  "endpoint": "/v1/data/weather",
+  "params": [
+    {
+      "name": "lat",
+      "type": "number",
+      "required": true,
+      "desc": "Latitude of the location (e.g. 52.52)"
+    },
+    {
+      "name": "lon",
+      "type": "number",
+      "required": true,
+      "desc": "Longitude of the location (e.g. 13.41)"
+    }
+  ],
+  "responseExample": {
+    "success": true,
+    "location": {
+      "latitude": 52.52,
+      "longitude": 13.419998,
+      "timezone": "Europe/Berlin"
+    },
+    "current_weather": {
+      "temperature": 22.5,
+      "temperature_unit": "°C",
+      "humidity": 45,
+      "humidity_unit": "%",
+      "is_day": true,
+      "precipitation": 0.0,
+      "wind_speed": 12.5,
+      "wind_speed_unit": "km/h",
+      "time": "2026-05-30T12:00"
+    }
+  },
+  "howItWorks": [
+    "You provide geographical coordinates (latitude/longitude).",
+    "Our API queries global meteorological models for the exact location.",
+    "Real-time climate data is instantly returned in standardized JSON."
+  ],
+  "useCases": [
+    "Building weather forecasting apps",
+    "Triggering home automation based on weather",
+    "Adding climate data to travel itineraries"
+  ],
+  "rateLimit": {
+    "free": "5,000/mo",
+    "pro": "250,000/mo",
+    "enterprise": "Unlimited"
+  }
+}

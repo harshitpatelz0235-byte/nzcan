@@ -1,0 +1,42 @@
+{
+  "id": "qr-code",
+  "name": "QR Code Generator",
+  "category": "media-creative",
+  "categoryName": "Media & Creative",
+  "icon": "📱",
+  "shortDesc": "Instantly generate high-quality QR codes for any text, URL, or data payload.",
+  "description": "The QR Code API dynamically generates a scannable PNG image. Perfect for event ticketing, marketing materials, digital menus, or vCards. Returns raw binary image data that can be displayed directly in web apps.",
+  "method": "POST",
+  "baseUrl": "https://errordocs.com",
+  "endpoint": "/v1/media/qr-code",
+  "params": [
+    {
+      "name": "data",
+      "type": "string",
+      "required": true,
+      "desc": "The text or URL to encode in the QR code."
+    },
+    {
+      "name": "size",
+      "type": "string",
+      "required": false,
+      "desc": "Dimensions of the QR code (e.g. '300x300'). Default is 300x300."
+    }
+  ],
+  "responseExample": "Returns a raw image/png binary blob.",
+  "howItWorks": [
+    "You send the payload you want encoded (like a website URL).",
+    "Our rendering engine instantly generates the matrix code pattern.",
+    "The API streams a high-resolution PNG image directly back to your client."
+  ],
+  "useCases": [
+    "Generating digital tickets or boarding passes",
+    "Linking physical products to digital manuals",
+    "Contactless restaurant menus"
+  ],
+  "rateLimit": {
+    "free": "1,000/mo",
+    "pro": "100,000/mo",
+    "enterprise": "Unlimited"
+  }
+}
