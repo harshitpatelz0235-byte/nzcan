@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Errordocs API Marketplace",
   "scripts": {
-    "build": "echo 'No build step required for this static site!'"
+    "build": "echo 'No build step required for this static site!'",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.95.0"
   }
 }
