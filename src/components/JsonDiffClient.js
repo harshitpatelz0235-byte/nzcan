@@ -1,14 +1,29 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { ArrowRightLeft, FileJson, Copy, Trash2, AlignLeft, ArrowDownAZ } from 'lucide-react';
-import { diffLines } from 'diff';
+import ReactDiffViewer from 'react-diff-viewer-continued';
 
 export default function JsonDiffClient({ dict }) {
   const [leftInput, setLeftInput] = useState('');
   const [rightInput, setRightInput] = useState('');
   const [error, setError] = useState(null);
   const [sortKeys, setSortKeys] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Detect dark mode for diff viewer styling
+  useEffect(() => {
+    // Check if the html element has the 'dark' class
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains('dark'));
+    };
+    checkDarkMode();
+    
+    // Create an observer to watch for class changes on HTML
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
 
   // Helper function to recursively sort object keys
   const sortObjectKeys = (obj) => {
@@ -53,7 +68,7 @@ export default function JsonDiffClient({ dict }) {
       return null;
     }
 
-    return diffLines(leftParsed, rightParsed);
+    return { leftParsed, rightParsed, areIdentical: leftParsed === rightParsed };
   }, [leftInput, rightInput, sortKeys, dict]);
 
   const clearInputs = () => {
@@ -164,40 +179,83 @@ export default function JsonDiffClient({ dict }) {
           <span>{dict.diffResult || 'Diff Output'}</span>
           <ArrowRightLeft size={14} className="text-gray-400" />
         </div>
-        <div className="w-full min-h-[300px] max-h-[600px] overflow-auto py-4 font-mono text-sm bg-gray-50/30 dark:bg-gray-900/50 whitespace-pre shadow-inner">
+        <div className="w-full min-h-[300px] overflow-auto py-0 font-mono text-sm bg-gray-50/30 dark:bg-gray-900/50 shadow-inner custom-diff-viewer">
           {!diffResult && (
-            <div className="text-gray-400 flex h-full items-center justify-center italic">
+            <div className="text-gray-400 flex h-full items-center justify-center italic py-20">
               {dict.waitingForInput || 'Enter JSON in both panels to see differences...'}
             </div>
           )}
-          {diffResult && diffResult.length === 1 && !diffResult[0].added && !diffResult[0].removed && (
-            <div className="text-emerald-600 dark:text-emerald-400 flex h-full items-center justify-center font-semibold text-lg">
+          {diffResult && diffResult.areIdentical && (
+            <div className="text-emerald-600 dark:text-emerald-400 flex h-full items-center justify-center font-semibold text-lg py-20">
               ✨ {dict.identicalMessage || 'JSON objects are identical!'}
             </div>
           )}
-          {diffResult && (diffResult.length > 1 || diffResult[0].added || diffResult[0].removed) && diffResult.map((part, index) => {
-            const colorClass = part.added 
-              ? 'bg-emerald-50 text-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-300 border-l-4 border-emerald-500' 
-              : part.removed 
-                ? 'bg-red-50 text-red-800 dark:bg-red-900/20 dark:text-red-300 border-l-4 border-red-500' 
-                : 'text-gray-700 dark:text-gray-300 border-l-4 border-transparent';
-            
-            const prefix = part.added ? '+' : part.removed ? '-' : ' ';
-            
-            // Handle multiple lines in a single part
-            const lines = part.value.replace(/\n$/, '').split('\n');
-            
-            return (
-              <span key={index} className={`block w-full ${colorClass}`}>
-                {lines.map((line, i) => (
-                  <div key={i} className="flex hover:bg-gray-900/5 dark:hover:bg-white/5 transition-colors">
-                    <span className="w-10 flex-shrink-0 text-center opacity-40 select-none border-r border-gray-300 dark:border-gray-700 mr-4 font-bold">{prefix}</span>
-                    <span className="break-all whitespace-pre-wrap">{line}</span>
-                  </div>
-                ))}
-              </span>
-            );
-          })}
+          {diffResult && !diffResult.areIdentical && (
+            <ReactDiffViewer
+              oldValue={diffResult.leftParsed}
+              newValue={diffResult.rightParsed}
+              splitView={true}
+              useDarkTheme={isDarkMode}
+              leftTitle={dict.originalJson || 'Original'}
+              rightTitle={dict.modifiedJson || 'Modified'}
+              hideLineNumbers={false}
+              showDiffOnly={false}
+              styles={{
+                variables: {
+                  dark: {
+                    diffViewerBackground: '#111827',
+                    diffViewerColor: '#E5E7EB',
+                    addedBackground: '#064e3b',
+                    addedColor: '#34d399',
+                    removedBackground: '#7f1d1d',
+                    removedColor: '#f87171',
+                    wordAddedBackground: '#047857',
+                    wordRemovedBackground: '#991b1b',
+                    addedGutterBackground: '#065f46',
+                    removedGutterBackground: '#991b1b',
+                    gutterBackground: '#1f2937',
+                    gutterBackgroundDark: '#111827',
+                    highlightBackground: '#374151',
+                    highlightGutterBackground: '#4b5563',
+                    codeFoldGutterBackground: '#374151',
+                    codeFoldBackground: '#1f2937',
+                    emptyLineBackground: '#111827',
+                    gutterColor: '#9ca3af',
+                    addedGutterColor: '#a7f3d0',
+                    removedGutterColor: '#fecaca',
+                    titleBackground: '#1f2937'
+                  },
+                  light: {
+                    diffViewerBackground: '#f9fafb',
+                    diffViewerColor: '#374151',
+                    addedBackground: '#ecfdf5',
+                    addedColor: '#065f46',
+                    removedBackground: '#fef2f2',
+                    removedColor: '#991b1b',
+                    wordAddedBackground: '#a7f3d0',
+                    wordRemovedBackground: '#fecaca',
+                    addedGutterBackground: '#d1fae5',
+                    removedGutterBackground: '#fee2e2',
+                    gutterBackground: '#f3f4f6',
+                    gutterBackgroundDark: '#e5e7eb',
+                    highlightBackground: '#e5e7eb',
+                    highlightGutterBackground: '#d1d5db',
+                    codeFoldGutterBackground: '#f3f4f6',
+                    codeFoldBackground: '#f9fafb',
+                    emptyLineBackground: '#ffffff',
+                    gutterColor: '#6b7280',
+                    addedGutterColor: '#065f46',
+                    removedGutterColor: '#991b1b',
+                    titleBackground: '#f3f4f6'
+                  }
+                },
+                line: {
+                  fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+                  fontSize: '13px',
+                },
+              }}
+            />
+          )}
         </div>
       </div>
     </div>
