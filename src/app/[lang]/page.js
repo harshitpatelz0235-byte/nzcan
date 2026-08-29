@@ -68,6 +68,15 @@ export default async function HomePage({ params }) {
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors relative z-10">{dict.csvToJson.title}</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400 relative z-10">{dict.csvToJson.subtitle}</p>
         </Link>
+
+        <Link href={`/${lang}/json-to-ts`} className="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl hover:border-pink-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-500/10 to-transparent rounded-bl-full pointer-events-none transition-opacity opacity-0 group-hover:opacity-100"></div>
+          <div className="w-12 h-12 bg-pink-100 dark:bg-pink-900/50 rounded-lg flex items-center justify-center mb-4 relative z-10">
+            <svg className="w-6 h-6 text-pink-600 dark:text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+          </div>
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors relative z-10">{dict.jsonToTs.title}</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400 relative z-10">{dict.jsonToTs.subtitle}</p>
+        </Link>
       </div>
     </div>
   );

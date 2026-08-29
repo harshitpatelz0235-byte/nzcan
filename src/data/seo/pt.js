@@ -96,5 +96,13 @@ export const ptSeo = {
     commonErrors: { title: "Erros", errors: [{ name: "Sem cabeçalho", description: "O CSV precisa de cabeçalho." }] },
     technical: { title: "Técnico", paragraphs: ["Analisa texto e descobre tipos."] },
     faq: { title: "FAQ", questions: [{ question: "É seguro?", answer: "Sim, no lado cliente." }] }
+  },
+  jsonToTs: {
+    features: { title: "JSON para TypeScript", items: ["Geração instantânea", "Objetos aninhados"] },
+    howToUse: { title: "Como usar", steps: ["Cole JSON", "Copie TS"] },
+    example: { title: "Exemplo", inputLabel: "JSON", input: '{"id": 1}', outputLabel: "TS", output: "export interface RootObject { id: number; }" },
+    commonErrors: { title: "Erros", errors: [{ name: "Raiz primitiva", description: "Precisa ser objeto." }] },
+    technical: { title: "Técnico", paragraphs: ["Gera AST recursivamente."] },
+    faq: { title: "FAQ", questions: [{ question: "Lida com nulos?", answer: "Sim, como any | null." }] }
   }
 };

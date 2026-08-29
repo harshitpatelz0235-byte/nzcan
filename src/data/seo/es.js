@@ -260,5 +260,47 @@ export const esSeo = {
         { question: "¿Puede manejar archivos grandes?", answer: "Sí, funciona en tu navegador." }
       ]
     }
+  },
+  jsonToTs: {
+    features: {
+      title: "Características de JSON a TypeScript",
+      items: [
+        "Generación instantánea: Crea interfaces estrictas desde cualquier JSON.",
+        "Análisis de objetos anidados: Detecta y nombra interfaces hijas automáticamente.",
+        "Inferencia de tipos exacta: Mapea strings, números, booleanos y arrays."
+      ]
+    },
+    howToUse: {
+      title: "Cómo usar",
+      steps: [
+        "Copia tu payload JSON.",
+        "Pega en el editor.",
+        "Visualiza la interfaz TypeScript generada.",
+        "Copia o descarga para usar en tu base de código."
+      ]
+    },
+    example: {
+      title: "Ejemplo",
+      inputLabel: "Entrada JSON",
+      input: '{"id": 1, "name": "John"}',
+      outputLabel: "Salida TypeScript",
+      output: 'export interface RootObject {\n  id: number;\n  name: string;\n}'
+    },
+    commonErrors: {
+      title: "Errores comunes",
+      errors: [
+        { name: "Raíz no es objeto", description: "La entrada debe ser un objeto JSON válido para generar un tipo." }
+      ]
+    },
+    technical: {
+      title: "Detalles técnicos",
+      paragraphs: ["Nuestro motor utiliza un analizador AST (Abstract Syntax Tree) recursivo que analiza cada nodo del árbol JSON y genera una interfaz de tipado estático."]
+    },
+    faq: {
+      title: "Preguntas frecuentes",
+      questions: [
+        { question: "¿Qué pasa con los valores null?", answer: "Se tipan como `any | null` ya que carecen de tipo de datos inherente." }
+      ]
+    }
   }
 };

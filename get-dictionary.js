@@ -77,6 +77,19 @@ const dictionaries = {
       breadcrumbs: { home: "Home", tools: "Tools", current: "CSV to JSON" },
       inputPlaceholder: "Paste your CSV data here (e.g., id,name\\n1,John)",
       outputPlaceholder: "Converted JSON array will appear here..."
+    },
+    jsonToTs: {
+      title: "JSON to TypeScript",
+      subtitle: "Instantly generate strict TypeScript interfaces and types from your JSON payloads.",
+      convertButton: "Generate Interfaces",
+      downloadButton: "Download .ts",
+      copyButton: "Copy",
+      clearButton: "Clear",
+      errorNotObject: "Input must be a valid JSON object or array to generate an interface.",
+      errorMessage: "Invalid JSON data.",
+      breadcrumbs: { home: "Home", tools: "Tools", current: "JSON to TS" },
+      inputPlaceholder: "Paste your JSON payload here (e.g., {\"id\":1, \"name\":\"John\"})",
+      outputPlaceholder: "Generated TypeScript interfaces will appear here..."
     }
   },
   hi: {
@@ -157,6 +170,19 @@ const dictionaries = {
       breadcrumbs: { home: "होम", tools: "उपकरण", current: "CSV से JSON" },
       inputPlaceholder: "अपना CSV डेटा यहाँ पेस्ट करें (उदा., id,name\\n1,John)",
       outputPlaceholder: "कनवर्ट की गई JSON सरणी यहाँ दिखाई देगी..."
+    },
+    jsonToTs: {
+      title: "JSON से TypeScript",
+      subtitle: "अपने JSON पेलोड से तुरंत सख्त TypeScript इंटरफेस उत्पन्न करें।",
+      convertButton: "इंटरफ़ेस उत्पन्न करें",
+      downloadButton: ".ts डाउनलोड करें",
+      copyButton: "कॉपी करें",
+      clearButton: "साफ़ करें",
+      errorNotObject: "इंटरफ़ेस उत्पन्न करने के लिए इनपुट एक मान्य JSON ऑब्जेक्ट या सरणी होनी चाहिए।",
+      errorMessage: "अवैध JSON डेटा।",
+      breadcrumbs: { home: "होम", tools: "उपकरण", current: "JSON से TS" },
+      inputPlaceholder: "अपना JSON पेलोड यहाँ पेस्ट करें (उदा., {\"id\":1, \"name\":\"John\"})",
+      outputPlaceholder: "उत्पन्न TypeScript इंटरफेस यहाँ दिखाई देंगे..."
     }
   },
   pt: {
@@ -237,6 +263,19 @@ const dictionaries = {
       breadcrumbs: { home: "Início", tools: "Ferramentas", current: "CSV para JSON" },
       inputPlaceholder: "Cole seus dados CSV aqui (ex., id,name\\n1,John)",
       outputPlaceholder: "O array JSON convertido aparecerá aqui..."
+    },
+    jsonToTs: {
+      title: "JSON para TypeScript",
+      subtitle: "Gere instantaneamente interfaces e tipos TypeScript estritos de suas cargas JSON.",
+      convertButton: "Gerar Interfaces",
+      downloadButton: "Baixar .ts",
+      copyButton: "Copiar",
+      clearButton: "Limpar",
+      errorNotObject: "A entrada deve ser um objeto JSON ou array válido para gerar uma interface.",
+      errorMessage: "Dados JSON inválidos.",
+      breadcrumbs: { home: "Início", tools: "Ferramentas", current: "JSON para TS" },
+      inputPlaceholder: "Cole sua carga JSON aqui (ex., {\"id\":1, \"name\":\"John\"})",
+      outputPlaceholder: "As interfaces TypeScript geradas aparecerão aqui..."
     }
   },
   es: {
@@ -317,6 +356,19 @@ const dictionaries = {
       breadcrumbs: { home: "Inicio", tools: "Herramientas", current: "CSV a JSON" },
       inputPlaceholder: "Pega tus datos CSV aquí (ej., id,name\\n1,John)",
       outputPlaceholder: "La matriz JSON convertida aparecerá aquí..."
+    },
+    jsonToTs: {
+      title: "JSON a TypeScript",
+      subtitle: "Genera al instante interfaces estrictas de TypeScript a partir de tus JSON.",
+      convertButton: "Generar Interfaces",
+      downloadButton: "Descargar .ts",
+      copyButton: "Copiar",
+      clearButton: "Limpiar",
+      errorNotObject: "La entrada debe ser un objeto o matriz JSON válido para generar una interfaz.",
+      errorMessage: "Datos JSON inválidos.",
+      breadcrumbs: { home: "Inicio", tools: "Herramientas", current: "JSON a TS" },
+      inputPlaceholder: "Pega tu JSON aquí (ej., {\"id\":1, \"name\":\"John\"})",
+      outputPlaceholder: "Las interfaces TypeScript generadas aparecerán aquí..."
     }
   },
   de: {
@@ -397,6 +449,19 @@ const dictionaries = {
       breadcrumbs: { home: "Startseite", tools: "Werkzeuge", current: "CSV zu JSON" },
       inputPlaceholder: "Fügen Sie hier Ihre CSV-Daten ein (z.B., id,name\\n1,John)",
       outputPlaceholder: "Das konvertierte JSON-Array wird hier angezeigt..."
+    },
+    jsonToTs: {
+      title: "JSON zu TypeScript",
+      subtitle: "Generieren Sie sofort strenge TypeScript-Schnittstellen aus Ihren JSON-Nutzdaten.",
+      convertButton: "Schnittstellen Generieren",
+      downloadButton: ".ts Herunterladen",
+      copyButton: "Kopieren",
+      clearButton: "Löschen",
+      errorNotObject: "Die Eingabe muss ein gültiges JSON-Objekt oder -Array sein.",
+      errorMessage: "Ungültige JSON-Daten.",
+      breadcrumbs: { home: "Startseite", tools: "Werkzeuge", current: "JSON zu TS" },
+      inputPlaceholder: "Fügen Sie hier Ihre JSON-Nutzdaten ein (z.B., {\"id\":1, \"name\":\"John\"})",
+      outputPlaceholder: "Die generierten TypeScript-Schnittstellen werden hier angezeigt..."
     }
   },
   id: {
@@ -477,6 +542,19 @@ const dictionaries = {
       breadcrumbs: { home: "Beranda", tools: "Alat", current: "CSV ke JSON" },
       inputPlaceholder: "Tempelkan data CSV Anda di sini (mis., id,name\\n1,John)",
       outputPlaceholder: "Array JSON yang dikonversi akan muncul di sini..."
+    },
+    jsonToTs: {
+      title: "JSON ke TypeScript",
+      subtitle: "Hasilkan antarmuka dan tipe TypeScript yang ketat dari payload JSON Anda secara instan.",
+      convertButton: "Hasilkan Antarmuka",
+      downloadButton: "Unduh .ts",
+      copyButton: "Salin",
+      clearButton: "Bersihkan",
+      errorNotObject: "Masukan harus berupa objek atau array JSON yang valid.",
+      errorMessage: "Data JSON tidak valid.",
+      breadcrumbs: { home: "Beranda", tools: "Alat", current: "JSON ke TS" },
+      inputPlaceholder: "Tempelkan payload JSON Anda di sini (mis., {\"id\":1, \"name\":\"John\"})",
+      outputPlaceholder: "Antarmuka TypeScript yang dihasilkan akan muncul di sini..."
     }
   }
 };

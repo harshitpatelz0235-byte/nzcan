@@ -96,5 +96,13 @@ export const deSeo = {
     commonErrors: { title: "Fehler", errors: [{ name: "Kein Header", description: "CSV benötigt einen Header." }] },
     technical: { title: "Technik", paragraphs: ["Analysiert Text und leitet Typen ab."] },
     faq: { title: "FAQ", questions: [{ question: "Ist es sicher?", answer: "Ja, alles läuft lokal." }] }
+  },
+  jsonToTs: {
+    features: { title: "JSON zu TypeScript", items: ["Sofortige Generierung", "Verschachtelte Objekte"] },
+    howToUse: { title: "Wie man es benutzt", steps: ["JSON einfügen", "TS kopieren"] },
+    example: { title: "Beispiel", inputLabel: "JSON", input: '{"id": 1}', outputLabel: "TS", output: "export interface RootObject { id: number; }" },
+    commonErrors: { title: "Fehler", errors: [{ name: "Primitiver Stamm", description: "Muss ein Objekt sein." }] },
+    technical: { title: "Technik", paragraphs: ["Generiert AST rekursiv."] },
+    faq: { title: "FAQ", questions: [{ question: "Behandelt es null?", answer: "Ja, als any | null." }] }
   }
 };

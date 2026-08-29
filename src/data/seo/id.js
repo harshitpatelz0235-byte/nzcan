@@ -96,5 +96,13 @@ export const idSeo = {
     commonErrors: { title: "Kesalahan", errors: [{ name: "Tidak ada header", description: "CSV harus memiliki header." }] },
     technical: { title: "Teknis", paragraphs: ["Menguraikan teks dan menyimpulkan jenis data."] },
     faq: { title: "FAQ", questions: [{ question: "Apakah aman?", answer: "Ya, di sisi klien." }] }
+  },
+  jsonToTs: {
+    features: { title: "JSON ke TypeScript", items: ["Pembuatan Instan", "Objek Bersarang"] },
+    howToUse: { title: "Cara menggunakan", steps: ["Tempel JSON", "Salin TS"] },
+    example: { title: "Contoh", inputLabel: "JSON", input: '{"id": 1}', outputLabel: "TS", output: "export interface RootObject { id: number; }" },
+    commonErrors: { title: "Kesalahan", errors: [{ name: "Akar primitif", description: "Harus berupa objek." }] },
+    technical: { title: "Teknis", paragraphs: ["Menghasilkan AST secara rekursif."] },
+    faq: { title: "FAQ", questions: [{ question: "Menangani null?", answer: "Ya, sebagai any | null." }] }
   }
 };
