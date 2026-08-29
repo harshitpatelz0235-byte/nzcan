@@ -90,7 +90,20 @@ const dictionaries = {
       breadcrumbs: { home: "Home", tools: "Tools", current: "JSON to TS" },
       inputPlaceholder: "Paste your JSON payload here (e.g., {\"id\":1, \"name\":\"John\"})",
       outputPlaceholder: "Generated TypeScript interfaces will appear here..."
-    }
+    },
+    jsonDiff: {
+      breadcrumbs: { home: "Home", tools: "Tools", current: "JSON Diff" },
+      originalJson: "Original JSON",
+      originalPlaceholder: "Paste original JSON here...",
+      modifiedJson: "Modified JSON",
+      modifiedPlaceholder: "Paste modified JSON here...",
+      diffResult: "Diff Output",
+      waitingForInput: "Enter JSON in both panels to see differences...",
+      errorMessageLeft: "Invalid JSON in original panel",
+      errorMessageRight: "Invalid JSON in modified panel",
+      sampleData: "Load Sample",
+      clearButton: "Clear",
+    },
   },
   hi: {
     layout: {
@@ -183,7 +196,20 @@ const dictionaries = {
       breadcrumbs: { home: "होम", tools: "उपकरण", current: "JSON से TS" },
       inputPlaceholder: "अपना JSON पेलोड यहाँ पेस्ट करें (उदा., {\"id\":1, \"name\":\"John\"})",
       outputPlaceholder: "उत्पन्न TypeScript इंटरफेस यहाँ दिखाई देंगे..."
-    }
+    },
+    jsonDiff: {
+      breadcrumbs: { home: "होम", tools: "टूल्स", current: "JSON Diff" },
+      originalJson: "मूल JSON",
+      originalPlaceholder: "यहां मूल JSON पेस्ट करें...",
+      modifiedJson: "संशोधित JSON",
+      modifiedPlaceholder: "यहां संशोधित JSON पेस्ट करें...",
+      diffResult: "अंतर आउटपुट",
+      waitingForInput: "अंतर देखने के लिए दोनों पैनलों में JSON दर्ज करें...",
+      errorMessageLeft: "मूल पैनल में अमान्य JSON",
+      errorMessageRight: "संशोधित पैनल में अमान्य JSON",
+      sampleData: "नमूना लोड करें",
+      clearButton: "साफ़ करें",
+    },
   },
   pt: {
     layout: {
@@ -276,7 +302,20 @@ const dictionaries = {
       breadcrumbs: { home: "Início", tools: "Ferramentas", current: "JSON para TS" },
       inputPlaceholder: "Cole sua carga JSON aqui (ex., {\"id\":1, \"name\":\"John\"})",
       outputPlaceholder: "As interfaces TypeScript geradas aparecerão aqui..."
-    }
+    },
+    jsonDiff: {
+      breadcrumbs: { home: "Início", tools: "Ferramentas", current: "JSON Diff" },
+      originalJson: "JSON Original",
+      originalPlaceholder: "Cole o JSON original aqui...",
+      modifiedJson: "JSON Modificado",
+      modifiedPlaceholder: "Cole o JSON modificado aqui...",
+      diffResult: "Resultado da Diferença",
+      waitingForInput: "Insira o JSON em ambos os painéis para ver as diferenças...",
+      errorMessageLeft: "JSON inválido no painel original",
+      errorMessageRight: "JSON inválido no painel modificado",
+      sampleData: "Carregar Exemplo",
+      clearButton: "Limpar",
+    },
   },
   es: {
     layout: {
@@ -369,7 +408,20 @@ const dictionaries = {
       breadcrumbs: { home: "Inicio", tools: "Herramientas", current: "JSON a TS" },
       inputPlaceholder: "Pega tu JSON aquí (ej., {\"id\":1, \"name\":\"John\"})",
       outputPlaceholder: "Las interfaces TypeScript generadas aparecerán aquí..."
-    }
+    },
+    jsonDiff: {
+      breadcrumbs: { home: "Inicio", tools: "Herramientas", current: "JSON Diff" },
+      originalJson: "JSON Original",
+      originalPlaceholder: "Pega el JSON original aquí...",
+      modifiedJson: "JSON Modificado",
+      modifiedPlaceholder: "Pega el JSON modificado aquí...",
+      diffResult: "Resultado de las Diferencias",
+      waitingForInput: "Ingresa JSON en ambos paneles para ver las diferencias...",
+      errorMessageLeft: "JSON inválido en el panel original",
+      errorMessageRight: "JSON inválido en el panel modificado",
+      sampleData: "Cargar Ejemplo",
+      clearButton: "Limpiar",
+    },
   },
   de: {
     layout: {
@@ -462,7 +514,20 @@ const dictionaries = {
       breadcrumbs: { home: "Startseite", tools: "Werkzeuge", current: "JSON zu TS" },
       inputPlaceholder: "Fügen Sie hier Ihre JSON-Nutzdaten ein (z.B., {\"id\":1, \"name\":\"John\"})",
       outputPlaceholder: "Die generierten TypeScript-Schnittstellen werden hier angezeigt..."
-    }
+    },
+    jsonDiff: {
+      breadcrumbs: { home: "Startseite", tools: "Werkzeuge", current: "JSON Diff" },
+      originalJson: "Original JSON",
+      originalPlaceholder: "Original JSON hier einfügen...",
+      modifiedJson: "Geändertes JSON",
+      modifiedPlaceholder: "Geändertes JSON hier einfügen...",
+      diffResult: "Unterschiede (Diff)",
+      waitingForInput: "Geben Sie JSON in beide Felder ein, um Unterschiede zu sehen...",
+      errorMessageLeft: "Ungültiges JSON im ursprünglichen Feld",
+      errorMessageRight: "Ungültiges JSON im geänderten Feld",
+      sampleData: "Beispiel Laden",
+      clearButton: "Leeren",
+    },
   },
   id: {
     layout: {
@@ -555,6 +620,19 @@ const dictionaries = {
       breadcrumbs: { home: "Beranda", tools: "Alat", current: "JSON ke TS" },
       inputPlaceholder: "Tempelkan payload JSON Anda di sini (mis., {\"id\":1, \"name\":\"John\"})",
       outputPlaceholder: "Antarmuka TypeScript yang dihasilkan akan muncul di sini..."
+    },
+    jsonDiff: {
+      breadcrumbs: { home: "Beranda", tools: "Alat", current: "JSON Diff" },
+      originalJson: "JSON Asli",
+      originalPlaceholder: "Tempel JSON asli di sini...",
+      modifiedJson: "JSON Dimodifikasi",
+      modifiedPlaceholder: "Tempel JSON yang dimodifikasi di sini...",
+      diffResult: "Hasil Perbedaan",
+      waitingForInput: "Masukkan JSON di kedua panel untuk melihat perbedaan...",
+      errorMessageLeft: "JSON tidak valid di panel asli",
+      errorMessageRight: "JSON tidak valid di panel modifikasi",
+      sampleData: "Muat Sampel",
+      clearButton: "Bersihkan",
     }
   }
 };

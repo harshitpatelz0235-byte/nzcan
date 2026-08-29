@@ -15,7 +15,8 @@ languages.forEach(lang => {
     '/json-repair',
     '/json-to-csv',
     '/csv-to-json',
-    '/json-to-ts'
+    '/json-to-ts',
+    '/json-diff'
   ];
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\\n';
