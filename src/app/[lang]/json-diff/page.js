@@ -2,8 +2,9 @@ import { getDictionary, getSeoDictionary } from "../../../../get-dictionary";
 import JsonDiffClient from "../../../components/JsonDiffClient";
 import ToolSeoContent from "../../../components/ToolSeoContent";
 
-export async function generateMetadata({ params: { lang } }) {
-  const seo = getSeoDictionary(lang).jsonDiff;
+export async function generateMetadata({ params }) {
+  const { lang } = await params;
+  const seo = (await getSeoDictionary(lang)).jsonDiff;
   
   return {
     title: seo.metaTitle,
@@ -23,9 +24,10 @@ export async function generateMetadata({ params: { lang } }) {
   };
 }
 
-export default function JsonDiffPage({ params: { lang } }) {
-  const dict = getDictionary(lang).jsonDiff;
-  const seo = getSeoDictionary(lang).jsonDiff;
+export default async function JsonDiffPage({ params }) {
+  const { lang } = await params;
+  const dict = (await getDictionary(lang)).jsonDiff;
+  const seo = (await getSeoDictionary(lang)).jsonDiff;
   
   return (
     <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 pt-24">
