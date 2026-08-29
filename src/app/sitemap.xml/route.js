@@ -3,6 +3,7 @@ export async function GET() {
   const baseUrl = "https://errordocs.com";
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n';
   xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   languages.forEach((lang) => {
