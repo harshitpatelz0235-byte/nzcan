@@ -5,10 +5,11 @@ import ToolSeoContent from "../../../components/ToolSeoContent";
 export async function generateMetadata({ params }) {
   const { lang } = await params;
   const dict = (await getDictionary(lang)).jsonToTs;
+  const seo = (await getSeoDictionary(lang)).jsonToTs;
 
   return {
-    title: dict.title,
-    description: dict.subtitle,
+    title: seo.metaTitle || dict.title,
+    description: seo.metaDescription || dict.subtitle,
     alternates: {
       canonical: `https://errordocs.com/${lang}/json-to-ts`,
       languages: {
@@ -57,7 +58,7 @@ export default async function JsonToTsPage({ params }) {
       },
       {
         "@type": "SoftwareApplication",
-        "name": dict.title,
+        "name": seoContent.h1 || dict.title,
         "operatingSystem": "Web",
         "applicationCategory": "DeveloperApplication",
         "offers": {
@@ -94,10 +95,10 @@ export default async function JsonToTsPage({ params }) {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
-          {dict.title}
+          {seoContent.h1 || dict.title}
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          {dict.subtitle}
+          {seoContent.subtitle || dict.subtitle}
         </p>
       </div>
 

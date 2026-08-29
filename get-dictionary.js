@@ -92,6 +92,8 @@ const dictionaries = {
       outputPlaceholder: "Generated TypeScript interfaces will appear here..."
     },
     jsonDiff: {
+      title: "JSON Diff Checker",
+      subtitle: "Compare JSON side-by-side to find additions, removals, and changes.",
       breadcrumbs: { home: "Home", tools: "Tools", current: "JSON Diff" },
       originalJson: "Original JSON",
       originalPlaceholder: "Paste original JSON here...",
@@ -103,6 +105,9 @@ const dictionaries = {
       errorMessageRight: "Invalid JSON in modified panel",
       sampleData: "Load Sample",
       clearButton: "Clear",
+      formatBoth: "Format Both",
+      sortKeysToggle: "Sort Keys (Semantic Diff)",
+      identicalMessage: "JSON objects are identical!",
     },
   },
   hi: {
@@ -198,6 +203,8 @@ const dictionaries = {
       outputPlaceholder: "उत्पन्न TypeScript इंटरफेस यहाँ दिखाई देंगे..."
     },
     jsonDiff: {
+      title: "JSON अंतर चेकर",
+      subtitle: "परिवर्धन, हटाने और परिवर्तन खोजने के लिए JSON की तुलना करें।",
       breadcrumbs: { home: "होम", tools: "टूल्स", current: "JSON Diff" },
       originalJson: "मूल JSON",
       originalPlaceholder: "यहां मूल JSON पेस्ट करें...",
@@ -209,6 +216,9 @@ const dictionaries = {
       errorMessageRight: "संशोधित पैनल में अमान्य JSON",
       sampleData: "नमूना लोड करें",
       clearButton: "साफ़ करें",
+      formatBoth: "दोनों फ़ॉर्मेट करें",
+      sortKeysToggle: "कुंजियाँ क्रमबद्ध करें (सिमेंटिक अंतर)",
+      identicalMessage: "JSON ऑब्जेक्ट समान हैं!",
     },
   },
   pt: {
@@ -304,6 +314,8 @@ const dictionaries = {
       outputPlaceholder: "As interfaces TypeScript geradas aparecerão aqui..."
     },
     jsonDiff: {
+      title: "Verificador de Diferença JSON",
+      subtitle: "Compare JSON lado a lado para encontrar adições, remoções e alterações.",
       breadcrumbs: { home: "Início", tools: "Ferramentas", current: "JSON Diff" },
       originalJson: "JSON Original",
       originalPlaceholder: "Cole o JSON original aqui...",
@@ -315,6 +327,9 @@ const dictionaries = {
       errorMessageRight: "JSON inválido no painel modificado",
       sampleData: "Carregar Exemplo",
       clearButton: "Limpar",
+      formatBoth: "Formatar Ambos",
+      sortKeysToggle: "Ordenar Chaves (Diferença Semântica)",
+      identicalMessage: "Objetos JSON são idênticos!",
     },
   },
   es: {
@@ -410,6 +425,8 @@ const dictionaries = {
       outputPlaceholder: "Las interfaces TypeScript generadas aparecerán aquí..."
     },
     jsonDiff: {
+      title: "Comprobador de Diferencias JSON",
+      subtitle: "Compare JSON lado a lado para encontrar adiciones, eliminaciones y cambios.",
       breadcrumbs: { home: "Inicio", tools: "Herramientas", current: "JSON Diff" },
       originalJson: "JSON Original",
       originalPlaceholder: "Pega el JSON original aquí...",
@@ -421,6 +438,9 @@ const dictionaries = {
       errorMessageRight: "JSON inválido en el panel modificado",
       sampleData: "Cargar Ejemplo",
       clearButton: "Limpiar",
+      formatBoth: "Formatear Ambos",
+      sortKeysToggle: "Ordenar Claves (Diferencia Semántica)",
+      identicalMessage: "¡Los objetos JSON son idénticos!",
     },
   },
   de: {
@@ -516,6 +536,8 @@ const dictionaries = {
       outputPlaceholder: "Die generierten TypeScript-Schnittstellen werden hier angezeigt..."
     },
     jsonDiff: {
+      title: "JSON Diff Checker",
+      subtitle: "Vergleichen Sie JSON nebeneinander, um Hinzufügungen, Entfernungen und Änderungen zu finden.",
       breadcrumbs: { home: "Startseite", tools: "Werkzeuge", current: "JSON Diff" },
       originalJson: "Original JSON",
       originalPlaceholder: "Original JSON hier einfügen...",
@@ -527,6 +549,9 @@ const dictionaries = {
       errorMessageRight: "Ungültiges JSON im geänderten Feld",
       sampleData: "Beispiel Laden",
       clearButton: "Leeren",
+      formatBoth: "Beide formatieren",
+      sortKeysToggle: "Schlüssel sortieren (Semantisches Diff)",
+      identicalMessage: "JSON-Objekte sind identisch!",
     },
   },
   id: {
@@ -622,6 +647,8 @@ const dictionaries = {
       outputPlaceholder: "Antarmuka TypeScript yang dihasilkan akan muncul di sini..."
     },
     jsonDiff: {
+      title: "Pemeriksa Perbedaan JSON",
+      subtitle: "Bandingkan JSON berdampingan untuk menemukan penambahan, penghapusan, dan perubahan.",
       breadcrumbs: { home: "Beranda", tools: "Alat", current: "JSON Diff" },
       originalJson: "JSON Asli",
       originalPlaceholder: "Tempel JSON asli di sini...",
@@ -633,6 +660,9 @@ const dictionaries = {
       errorMessageRight: "JSON tidak valid di panel modifikasi",
       sampleData: "Muat Sampel",
       clearButton: "Bersihkan",
+      formatBoth: "Format Keduanya",
+      sortKeysToggle: "Urutkan Kunci (Beda Semantik)",
+      identicalMessage: "Objek JSON identik!",
     }
   }
 };

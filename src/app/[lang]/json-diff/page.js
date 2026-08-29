@@ -76,7 +76,7 @@ export default async function JsonDiffPage({ params }) {
       </div>
 
       {/* SEO Content Section */}
-      <ToolSeoContent seo={seo} />
+      <ToolSeoContent content={seo} />
     </div>
   );
 }
