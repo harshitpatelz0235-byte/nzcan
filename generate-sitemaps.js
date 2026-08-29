@@ -42,7 +42,7 @@ languages.forEach(lang => {
 
   return new Response(xml, {
     headers: {
-      'Content-Type': 'application/xml',
+      'Content-Type': 'text/xml',
       'Cache-Control': 'public, max-age=86400, s-maxage=86400, stale-while-revalidate'
     },
   });
