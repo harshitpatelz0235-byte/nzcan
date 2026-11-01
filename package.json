@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "node build.js",
+    "deploy": "wrangler deploy",
     "start": "npx serve ."
   },
   "keywords": [
@@ -14,5 +15,8 @@
     "digital-products"
   ],
   "author": "harshitpatelz0235-byte",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "wrangler": "^4.156.0"
+  }
 }
