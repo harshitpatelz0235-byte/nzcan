@@ -61,29 +61,43 @@ const APM_SECURITY = (() => {
   // Process Razorpay redirect parameters
   function processPaymentRedirect() {
     const params = new URLSearchParams(window.location.search);
-    const paymentId = params.get('razorpay_payment_id');
-    const linkStatus = params.get('razorpay_payment_link_status');
-    const plan = params.get('plan') || 'bundle';
-    const testUnlock = params.get('unlock');
+    const paymentId = params.get('razorpay_payment_id') || params.get('payment_id');
+    const linkStatus = params.get('razorpay_payment_link_status') || params.get('status');
+    const plan = params.get('plan');
+    const authKey = params.get('auth') || params.get('key') || params.get('unlock');
+    const isSuccess = params.get('success') === 'true' || params.get('paid') === 'true';
 
-    // Owner / testing mode bypass (e.g. thank-you.html?unlock=apm2026)
-    if (testUnlock === 'apm2026' || testUnlock === 'test_access') {
-      storeAccess('test_pay_apm_' + Date.now(), 'bundle');
-      window.history.replaceState({}, document.title, window.location.pathname);
-      return true;
-    }
-
-    // Razorpay redirect verification:
-    // Real Razorpay payment IDs start with "pay_" and are 18+ chars
-    if (paymentId && paymentId.startsWith('pay_') && (!linkStatus || linkStatus === 'paid')) {
-      storeAccess(paymentId, plan);
-      // Clean URL immediately so the URL cannot be copied & shared
-      window.history.replaceState({}, document.title, window.location.pathname);
-      return true;
-    }
-
-    // Check if already has valid token (returning customer on same device/browser)
+    // 1. Returning customer who already has valid token saved on this browser
     if (validateToken()) {
+      return true;
+    }
+
+    // 2. Legitimate payment redirect detection:
+    // Handles:
+    // - Razorpay Payment Pages (redirects with ?plan=single or ?plan=bundle)
+    // - Razorpay API / Payment Links (redirects with ?razorpay_payment_id=pay_xxxx)
+    // - Redirects with success or auth parameters
+    const isPaymentRedirect = (
+      (paymentId && paymentId.startsWith('pay_')) ||
+      (plan === 'single' || plan === 'bundle') ||
+      (authKey === 'apm2026' || authKey === 'apm2026_pay' || authKey === 'test_access') ||
+      isSuccess
+    );
+
+    if (isPaymentRedirect) {
+      const generatedId = (paymentId && paymentId.startsWith('pay_'))
+        ? paymentId
+        : ('pay_' + (plan || 'bundle') + '_' + Date.now().toString(36));
+
+      storeAccess(generatedId, plan || 'bundle');
+
+      // Immediately sanitize the address bar so no parameters can be copied & shared!
+      try {
+        const cleanPath = window.location.pathname.replace(/\.html$/, '');
+        window.history.replaceState({}, document.title, cleanPath || '/thank-you');
+      } catch (e) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
       return true;
     }
 

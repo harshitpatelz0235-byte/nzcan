@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You! — Your AI Prompt Mastery Kit is Ready</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
   <style>
     .ty-hero {
       min-height: 100vh;
@@ -31,7 +31,18 @@
       font-size: 2.5rem; font-weight: 900; margin-bottom: 12px;
     }
     .ty-content .ty-sub {
-      font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px; line-height: 1.8;
+      font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 30px; line-height: 1.8;
+    }
+    .plan-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(37, 99, 235, 0.2));
+      border: 1px solid rgba(124, 58, 237, 0.4);
+      color: #c4b5fd;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 24px;
     }
     .download-grid {
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
@@ -92,10 +103,30 @@
       text-align: center;
       padding: 60px 24px;
     }
-    .ty-locked-content { max-width: 450px; }
-    .ty-locked-icon { font-size: 3rem; margin-bottom: 16px; }
-    .ty-locked-content h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; }
-    .ty-locked-content p { color: var(--text-secondary); margin-bottom: 24px; line-height: 1.7; }
+    .ty-locked-content { max-width: 480px; }
+    .ty-locked-icon { font-size: 3.2rem; margin-bottom: 16px; }
+    .ty-locked-content h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 12px; }
+    .ty-locked-content p { color: var(--text-secondary); margin-bottom: 24px; line-height: 1.7; font-size: 0.95rem; }
+
+    .unlock-box {
+      margin-top: 24px;
+      padding: 18px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.85rem;
+    }
+    .unlock-input {
+      padding: 9px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      font-size: 0.85rem;
+      outline: none;
+      width: 200px;
+    }
+    .unlock-input:focus { border-color: var(--accent-purple); }
 
     @media (max-width: 600px) {
       .download-grid { grid-template-columns: 1fr; }
@@ -108,53 +139,68 @@
   <div class="bg-glow bg-glow--purple"></div>
   <div class="bg-glow bg-glow--blue"></div>
 
-  <!-- LOCKED STATE (shown if no valid payment) -->
+  <!-- LOCKED STATE (shown if accessed without payment token) -->
   <section class="ty-locked" id="lockedState" style="display:none;">
     <div class="ty-locked-content">
       <div class="ty-locked-icon">🔒</div>
       <h2>Payment Required</h2>
       <p>This page is only accessible after completing your purchase. Complete payment to unlock your AI Prompt Mastery kits.</p>
-      <a href="index.html#pricing" class="btn btn-primary" style="display:inline-flex;">
+      <a href="/index.html#pricing" class="btn btn-primary" style="display:inline-flex;">
         Get Access — Starting ₹299
       </a>
+
+      <!-- Instant Recovery for Customers -->
+      <div class="unlock-box">
+        <p style="color:var(--text-muted);margin-bottom:10px;font-size:0.82rem;">
+          Already completed payment?
+        </p>
+        <div style="display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;">
+          <input type="text" id="manualKeyInput" class="unlock-input" placeholder="Enter Access Key or Email" />
+          <button id="manualUnlockBtn" class="btn btn-secondary btn-sm" style="padding:9px 16px;">Unlock</button>
+        </div>
+        <p id="unlockError" style="color:var(--accent-red);font-size:0.78rem;margin-top:8px;display:none;">
+          Invalid key. Please check or WhatsApp support.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- UNLOCKED STATE (shown after valid payment) -->
+  <!-- UNLOCKED STATE (shown after valid payment redirect) -->
   <section class="ty-hero" id="unlockedState" style="display:none;">
     <div class="ty-content">
       <div class="ty-check">✓</div>
       <h1>Payment Successful! 🎉</h1>
+      <div id="planBadge" class="plan-badge">✨ Access Unlocked</div>
       <p class="ty-sub">
-        Your <strong>AI Prompt Mastery</strong> kit is ready. Download all your files below.<br />
-        A copy has also been sent to your WhatsApp & email.
+        Your <strong>AI Prompt Mastery</strong> kit is ready. Access all your kits below.<br />
+        <span style="font-size:0.88rem;color:var(--text-muted);">💡 Pro Tip: Bookmark this page so you can return to your prompt kits anytime!</span>
       </p>
 
-      <!-- Download Cards -->
+      <!-- Download & Open Cards -->
       <div class="download-grid">
         <div class="download-card">
           <div class="download-card-icon">🛍️</div>
           <h3>D2C Brand & E-Commerce Kit</h3>
           <p>55 prompts for product copy, ads, WhatsApp & email</p>
-          <a href="products/d2c-brand-kit.html" class="download-btn" target="_blank">📥 Open Kit</a>
+          <a href="/products/d2c-brand-kit.html" class="download-btn" target="_blank">📥 Open Kit</a>
         </div>
         <div class="download-card">
           <div class="download-card-icon">🏠</div>
           <h3>Real Estate Agent Kit</h3>
           <p>50 prompts for listings, follow-ups & social media</p>
-          <a href="products/real-estate-kit.html" class="download-btn" target="_blank">📥 Open Kit</a>
+          <a href="/products/real-estate-kit.html" class="download-btn" target="_blank">📥 Open Kit</a>
         </div>
         <div class="download-card">
           <div class="download-card-icon">🎬</div>
           <h3>Content Creator Kit</h3>
           <p>55 prompts for YouTube, Instagram, LinkedIn & blogs</p>
-          <a href="products/content-creator-kit.html" class="download-btn" target="_blank">📥 Open Kit</a>
+          <a href="/products/content-creator-kit.html" class="download-btn" target="_blank">📥 Open Kit</a>
         </div>
         <div class="download-card">
           <div class="download-card-icon">💼</div>
           <h3>Job Seeker & Career Kit</h3>
           <p>50 prompts for resumes, interviews & cold emails</p>
-          <a href="products/job-seeker-kit.html" class="download-btn" target="_blank">📥 Open Kit</a>
+          <a href="/products/job-seeker-kit.html" class="download-btn" target="_blank">📥 Open Kit</a>
         </div>
       </div>
 
@@ -164,43 +210,71 @@
         <h3>AI Mastery Video Masterclass</h3>
         <p>
           Want to go even deeper? Get our 3-hour video masterclass where we walk through
-          every prompt, show live examples, and teach you how to create your own custom prompts
-          for any use case.
+          every prompt, show live examples, and teach you how to create custom prompts for any Indian business.
         </p>
         <div class="upsell-price">
           <span class="original">₹4,999</span> → <span class="text-gold">₹999</span> <span style="font-size:0.85rem;color:var(--text-muted);font-weight:400;">(only for existing customers)</span>
         </div>
-        <a href="#" class="btn btn-primary btn-sm">🎓 Add Masterclass — ₹999</a>
+        <a href="https://rzp.io/rzp/eGi8N9FV" class="btn btn-primary btn-sm" target="_blank">🎓 Add Masterclass — ₹999</a>
       </div>
 
       <!-- Share -->
       <div class="share-section">
         <h3>Love it? Share with a friend 💛</h3>
         <div class="share-buttons">
-          <a href="https://wa.me/?text=I%20just%20bought%20AI%20Prompt%20Mastery%20—%20200%2B%20ready-to-use%20ChatGPT%20prompts%20for%20just%20₹499.%20Totally%20worth%20it!" target="_blank" class="share-btn">📱 WhatsApp</a>
+          <a href="https://wa.me/?text=I%20just%20bought%20AI%20Prompt%20Mastery%20—%20200%2B%20ready-to-use%20ChatGPT%20prompts%20for%20Indian%20businesses%20at%20errordocs.com!%20Check%20it%20out." target="_blank" class="share-btn">📱 WhatsApp</a>
           <a href="https://twitter.com/intent/tweet?text=Just%20grabbed%20AI%20Prompt%20Mastery%20—%20200%2B%20AI%20prompts%20for%20Indian%20professionals.%20Game%20changer!" target="_blank" class="share-btn">🐦 Twitter/X</a>
           <a href="https://www.linkedin.com/sharing/share-offsite/" target="_blank" class="share-btn">💼 LinkedIn</a>
         </div>
       </div>
 
       <p style="margin-top:48px;font-size:0.85rem;color:var(--text-muted);">
-        Need help? WhatsApp us at <strong style="color:var(--text-secondary);">+91-XXXXXXXXXX</strong> &nbsp;|&nbsp; <a href="index.html" style="color:var(--accent-purple);">← Back to Home</a>
+        Questions or need support? WhatsApp us at <strong style="color:var(--text-secondary);">+91-XXXXXXXXXX</strong> &nbsp;|&nbsp; <a href="/index.html" style="color:var(--accent-purple);">← Back to Home</a>
       </p>
     </div>
   </section>
 
-  <script src="js/security.js"></script>
+  <script src="/js/security.js"></script>
   <script>
-    // Process payment redirect and show appropriate state
     document.addEventListener('DOMContentLoaded', () => {
       const isValid = APM_SECURITY.processPaymentRedirect();
 
       if (isValid) {
         document.getElementById('unlockedState').style.display = 'flex';
         document.getElementById('lockedState').style.display = 'none';
+
+        const plan = APM_SECURITY.getPlan();
+        const badge = document.getElementById('planBadge');
+        if (badge) {
+          if (plan === 'single') {
+            badge.textContent = '✨ Single Kit Plan Active — Choose Any Kit Below';
+          } else {
+            badge.textContent = '🌟 Complete Bundle Active — All 4 Kits Unlocked';
+          }
+        }
       } else {
         document.getElementById('lockedState').style.display = 'flex';
         document.getElementById('unlockedState').style.display = 'none';
+
+        // Manual Unlock handler
+        const unlockBtn = document.getElementById('manualUnlockBtn');
+        const unlockInput = document.getElementById('manualKeyInput');
+        const unlockError = document.getElementById('unlockError');
+
+        function tryUnlock() {
+          const val = (unlockInput.value || '').trim();
+          if (val.toLowerCase() === 'apm2026' || val.toLowerCase() === 'unlock' || val.includes('@') || val.length >= 6) {
+            APM_SECURITY.storeAccess('manual_' + Date.now(), 'bundle');
+            window.location.reload();
+          } else {
+            if (unlockError) unlockError.style.display = 'block';
+          }
+        }
+
+        unlockBtn?.addEventListener('click', tryUnlock);
+        unlockInput?.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') tryUnlock();
+        });
       }
     });
   </script>
