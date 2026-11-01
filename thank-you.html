@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You! — Your AI Prompt Mastery Kit is Ready</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .ty-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+    }
+    .ty-content { max-width: 700px; }
+    .ty-check {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 2.5rem; margin-bottom: 24px;
+      animation: scaleIn 0.5s ease;
+    }
+    @keyframes scaleIn {
+      0% { transform: scale(0); opacity: 0; }
+      70% { transform: scale(1.15); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .ty-content h1 {
+      font-size: 2.5rem; font-weight: 900; margin-bottom: 12px;
+    }
+    .ty-content .ty-sub {
+      font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px; line-height: 1.8;
+    }
+    .download-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+      margin-bottom: 40px;
+    }
+    .download-card {
+      background: var(--bg-card); border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg); padding: 28px; text-align: left;
+      transition: all var(--transition-medium);
+    }
+    .download-card:hover {
+      border-color: var(--border-glass-hover); transform: translateY(-4px);
+    }
+    .download-card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .download-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .download-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; }
+    .download-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border-radius: var(--radius-full);
+      background: var(--gradient-primary); color: #fff;
+      font-weight: 600; font-size: 0.85rem; text-decoration: none;
+      transition: all var(--transition-medium);
+    }
+    .download-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-glow-purple); color: #fff; }
+
+    .upsell-card {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(249, 115, 22, 0.05));
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: var(--radius-xl); padding: 36px; margin-bottom: 32px;
+    }
+    .upsell-badge {
+      display: inline-block; padding: 4px 14px; border-radius: var(--radius-full);
+      background: var(--gradient-gold); color: #000; font-size: 0.75rem;
+      font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
+    }
+    .upsell-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
+    .upsell-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.7; }
+    .upsell-price { font-size: 1.3rem; font-weight: 800; margin-bottom: 16px; }
+    .upsell-price .original { text-decoration: line-through; color: var(--text-muted); font-weight: 400; }
+
+    .share-section { margin-top: 40px; }
+    .share-section h3 { font-size: 1rem; font-weight: 600; margin-bottom: 16px; color: var(--text-secondary); }
+    .share-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .share-btn {
+      padding: 10px 20px; border-radius: var(--radius-full);
+      background: var(--bg-card); border: 1px solid var(--border-glass);
+      color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; transition: all var(--transition-fast);
+    }
+    .share-btn:hover { border-color: var(--border-glass-hover); color: var(--text-primary); }
+
+    /* Locked State */
+    .ty-locked {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+    }
+    .ty-locked-content { max-width: 450px; }
+    .ty-locked-icon { font-size: 3rem; margin-bottom: 16px; }
+    .ty-locked-content h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; }
+    .ty-locked-content p { color: var(--text-secondary); margin-bottom: 24px; line-height: 1.7; }
+
+    @media (max-width: 600px) {
+      .download-grid { grid-template-columns: 1fr; }
+      .ty-content h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--purple"></div>
+  <div class="bg-glow bg-glow--blue"></div>
+
+  <!-- LOCKED STATE (shown if no valid payment) -->
+  <section class="ty-locked" id="lockedState" style="display:none;">
+    <div class="ty-locked-content">
+      <div class="ty-locked-icon">🔒</div>
+      <h2>Payment Required</h2>
+      <p>This page is only accessible after completing your purchase. Complete payment to unlock your AI Prompt Mastery kits.</p>
+      <a href="index.html#pricing" class="btn btn-primary" style="display:inline-flex;">
+        Get Access — Starting ₹299
+      </a>
+    </div>
+  </section>
+
+  <!-- UNLOCKED STATE (shown after valid payment) -->
+  <section class="ty-hero" id="unlockedState" style="display:none;">
+    <div class="ty-content">
+      <div class="ty-check">✓</div>
+      <h1>Payment Successful! 🎉</h1>
+      <p class="ty-sub">
+        Your <strong>AI Prompt Mastery</strong> kit is ready. Download all your files below.<br />
+        A copy has also been sent to your WhatsApp & email.
+      </p>
+
+      <!-- Download Cards -->
+      <div class="download-grid">
+        <div class="download-card">
+          <div class="download-card-icon">🛍️</div>
+          <h3>D2C Brand & E-Commerce Kit</h3>
+          <p>55 prompts for product copy, ads, WhatsApp & email</p>
+          <a href="products/d2c-brand-kit.html" class="download-btn" target="_blank">📥 Open Kit</a>
+        </div>
+        <div class="download-card">
+          <div class="download-card-icon">🏠</div>
+          <h3>Real Estate Agent Kit</h3>
+          <p>50 prompts for listings, follow-ups & social media</p>
+          <a href="products/real-estate-kit.html" class="download-btn" target="_blank">📥 Open Kit</a>
+        </div>
+        <div class="download-card">
+          <div class="download-card-icon">🎬</div>
+          <h3>Content Creator Kit</h3>
+          <p>55 prompts for YouTube, Instagram, LinkedIn & blogs</p>
+          <a href="products/content-creator-kit.html" class="download-btn" target="_blank">📥 Open Kit</a>
+        </div>
+        <div class="download-card">
+          <div class="download-card-icon">💼</div>
+          <h3>Job Seeker & Career Kit</h3>
+          <p>50 prompts for resumes, interviews & cold emails</p>
+          <a href="products/job-seeker-kit.html" class="download-btn" target="_blank">📥 Open Kit</a>
+        </div>
+      </div>
+
+      <!-- Upsell -->
+      <div class="upsell-card">
+        <span class="upsell-badge">🔥 One-Time Exclusive Offer</span>
+        <h3>AI Mastery Video Masterclass</h3>
+        <p>
+          Want to go even deeper? Get our 3-hour video masterclass where we walk through
+          every prompt, show live examples, and teach you how to create your own custom prompts
+          for any use case.
+        </p>
+        <div class="upsell-price">
+          <span class="original">₹4,999</span> → <span class="text-gold">₹999</span> <span style="font-size:0.85rem;color:var(--text-muted);font-weight:400;">(only for existing customers)</span>
+        </div>
+        <a href="#" class="btn btn-primary btn-sm">🎓 Add Masterclass — ₹999</a>
+      </div>
+
+      <!-- Share -->
+      <div class="share-section">
+        <h3>Love it? Share with a friend 💛</h3>
+        <div class="share-buttons">
+          <a href="https://wa.me/?text=I%20just%20bought%20AI%20Prompt%20Mastery%20—%20200%2B%20ready-to-use%20ChatGPT%20prompts%20for%20just%20₹499.%20Totally%20worth%20it!" target="_blank" class="share-btn">📱 WhatsApp</a>
+          <a href="https://twitter.com/intent/tweet?text=Just%20grabbed%20AI%20Prompt%20Mastery%20—%20200%2B%20AI%20prompts%20for%20Indian%20professionals.%20Game%20changer!" target="_blank" class="share-btn">🐦 Twitter/X</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/" target="_blank" class="share-btn">💼 LinkedIn</a>
+        </div>
+      </div>
+
+      <p style="margin-top:48px;font-size:0.85rem;color:var(--text-muted);">
+        Need help? WhatsApp us at <strong style="color:var(--text-secondary);">+91-XXXXXXXXXX</strong> &nbsp;|&nbsp; <a href="index.html" style="color:var(--accent-purple);">← Back to Home</a>
+      </p>
+    </div>
+  </section>
+
+  <script src="js/security.js"></script>
+  <script>
+    // Process payment redirect and show appropriate state
+    document.addEventListener('DOMContentLoaded', () => {
+      const isValid = APM_SECURITY.processPaymentRedirect();
+
+      if (isValid) {
+        document.getElementById('unlockedState').style.display = 'flex';
+        document.getElementById('lockedState').style.display = 'none';
+      } else {
+        document.getElementById('lockedState').style.display = 'flex';
+        document.getElementById('unlockedState').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
