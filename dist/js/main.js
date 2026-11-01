@@ -156,22 +156,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
 
-  // --- Payment button handlers ---
-  document.querySelectorAll('[data-plan]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const plan = btn.dataset.plan;
-      // In production, this would redirect to Instamojo/Razorpay checkout
-      // For now, show a nice alert
-      const prices = {
-        'single': '₹299',
-        'bundle': '₹499'
-      };
-      
-      // Redirect to thank you page with plan info
-      const url = `thank-you.html?plan=${plan}&price=${encodeURIComponent(prices[plan] || '₹499')}`;
-      window.location.href = url;
+  // --- Meta Pixel: Track InitiateCheckout on payment links ---
+  document.querySelectorAll('a[href*="rzp.io"]').forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof fbq === 'function') {
+        const isBundle = link.href.includes('eGi8N9FV');
+        fbq('track', 'InitiateCheckout', {
+          value: isBundle ? 499 : 299,
+          currency: 'INR',
+          content_name: isBundle ? 'Complete Bundle (4 Kits)' : 'Single Kit'
+        });
+      }
     });
   });
-
 });
