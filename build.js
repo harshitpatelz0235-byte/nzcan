@@ -14,7 +14,7 @@ const filesToCopy = [
   'facebook-ad-copy.md'
 ];
 
-const foldersToCopy = ['css', 'js', 'products'];
+const foldersToCopy = ['css', 'js', 'products', 'ad-creatives'];
 
 outputDirs.forEach(outDir => {
   if (!fs.existsSync(outDir)) {
